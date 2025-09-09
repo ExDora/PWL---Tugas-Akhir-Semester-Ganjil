@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - LibraryHub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            line-height: 1.6;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 250px;
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transition: transform 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .sidebar.collapsed {
+            transform: translateX(-250px);
+        }
+
+        .sidebar-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .sidebar-logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .sidebar-nav {
+            padding: 1rem 0;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .nav-item:hover,
+        .nav-item.active {
+            background: rgba(255, 255, 255, 0.1);
+            border-left-color: #3498db;
+            color: white;
+        }
+
+        .nav-item i {
+            margin-right: 0.8rem;
+            font-size: 1.1rem;
+            width: 20px;
+        }
+
+        .user-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem 1.5rem;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            background: #3498db;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .user-name {
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .user-role {
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 250px;
+            transition: margin-left 0.3s ease;
+            min-height: 100vh;
+        }
+
+        .main-content.expanded {
+            margin-left: 0;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 500;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .menu-toggle {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #2c3e50;
+        }
+
+        .page-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .notification-btn,
+        .profile-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            position: relative;
+            transition: background 0.3s ease;
+        }
+
+        .notification-btn:hover,
+        .profile-btn:hover {
+            background: #f8f9fa;
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #e74c3c;
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logout-btn {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background: #c0392b;
+        }
+
+        /* Dashboard Content */
+        .dashboard {
+            padding: 2rem;
+        }
+
+        .welcome-section {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .welcome-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transform: translate(50%, -50%);
+        }
+
+        .welcome-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .welcome-title {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .welcome-subtitle {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--card-color, #3498db);
+        }
+
+        .stat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .stat-title {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .stat-icon {
+            font-size: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-change {
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .stat-change.positive {
+            color: #27ae60;
+        }
+
+        .stat-change.negative {
+            color: #e74c3c;
+        }
+
+        /* Quick Actions */
+        .quick-actions {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .actions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .action-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: #2c3e50;
+        }
+
+        .action-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            text-decoration: none;
+            color: #2c3e50;
+        }
+
+        .action-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        .action-title {
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .action-subtitle {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+        }
+
+        /* Recent Activity */
+        .recent-activity {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .activity-list {
+            list-style: none;
+        }
+
+        .activity-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid #f8f9fa;
+        }
+
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+
+        .activity-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .activity-content {
+            flex: 1;
+        }
+
+        .activity-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.2rem;
+        }
+
+        .activity-time {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-250px);
+            }
+
+            .sidebar.show {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .dashboard {
+                padding: 1rem;
+            }
+
+            .header {
+                padding: 1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .actions-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Color variables for stat cards */
+        .stat-card:nth-child(1) { --card-color: #3498db; }
+        .stat-card:nth-child(2) { --card-color: #27ae60; }
+        .stat-card:nth-child(3) { --card-color: #f39c12; }
+        .stat-card:nth-child(4) { --card-color: #e74c3c; }
+
+        /* Loading animation */
+        .loading {
+            opacity: 0.7;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        /* Overlay for mobile sidebar */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+
+        .sidebar-overlay.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">📚 LibraryHub</div>
+            <div class="sidebar-subtitle">Dashboard</div>
+        </div>
+        
+        <div class="sidebar-nav">
+            <a href="#" class="nav-item active">
+                <i>🏠</i> Dashboard
+            </a>
+            <a href="catalogue.html" class="nav-item">
+                <i>📚</i> Katalog Buku
+            </a>
+            <a href="booking.html" class="nav-item">
+                <i>📅</i> Booking Saya
+            </a>
+            <a href="#" class="nav-item">
+                <i>📖</i> Riwayat Pinjam
+            </a>
+            <a href="#" class="nav-item">
+                <i>⭐</i> Favorit
+            </a>
+            <a href="#" class="nav-item">
+                <i>💳</i> Pembayaran
+            </a>
+            <a href="#" class="nav-item">
+                <i>👤</i> Profil
+            </a>
+            <a href="#" class="nav-item">
+                <i>⚙️</i> Pengaturan
+            </a>
+        </div>
+        
+        <div class="user-info">
+            <div class="user-avatar">👤</div>
+            <div class="user-name" id="userName">John Doe</div>
+            <div class="user-role" id="userRole">Member</div>
+        </div>
+    </nav>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <button class="menu-toggle" id="menuToggle">☰</button>
+                <h1 class="page-title">Dashboard</h1>
+            </div>
+            <div class="header-right">
+                <button class="notification-btn">
+                    🔔
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="profile-btn">👤</button>
+                <button class="logout-btn" onclick="logout()">Keluar</button>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard">
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+                <div class="welcome-content">
+                    <h2 class="welcome-title">Selamat datang kembali, <span id="welcomeName">John</span>!</h2>
+                    <p class="welcome-subtitle">Hari ini adalah waktu yang tepat untuk membaca buku baru</p>
+                </div>
+            </section>
+
+            <!-- Stats Cards -->
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <span class="stat-title">Buku Dipinjam</span>
+                        <span class="stat-icon">📖</span>
+                    </div>
+                    <div class="stat-value">3</div>
+                    <div class="stat-change positive">
+                        ✓ Tidak ada tunggakan
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Actions -->
+            <section class="quick-actions">
+                <h3 class="section-title">
+                    ⚡ Aksi Cepat
+                </h3>
+                <div class="actions-grid">
+                    <a href="catalogue.html" class="action-card">
+                        <span class="action-icon">🔍</span>
+                        <div class="action-title">Cari Buku</div>
+                        <div class="action-subtitle">Temukan buku favorit Anda</div>
+                    </a>
+                    <a href="booking.html" class="action-card">
+                        <span class="action-icon">📅</span>
+                        <div class="action-title">Booking Buku</div>
+                        <div class="action-subtitle">Reservasi buku untuk nanti</div>
+                    </a>
+                    <a href="#" class="action-card">
+                        <span class="action-icon">📖</span>
+                        <div class="action-title">Perpanjang Pinjam</div>
+                        <div class="action-subtitle">Extend waktu peminjaman</div>
+                    </a>
+                    <a href="#" class="action-card">
+                        <span class="action-icon">💳</span>
+                        <div class="action-title">Bayar Denda</div>
+                        <div class="action-subtitle">Lunasi tunggakan Anda</div>
+                    </a>
+                    <a href="#" class="action-card">
+                        <span class="action-icon">⭐</span>
+                        <div class="action-title">Buku Favorit</div>
+                        <div class="action-subtitle">Lihat koleksi favorit</div>
+                    </a>
+                    <a href="#" class="action-card">
+                        <span class="action-icon">📊</span>
+                        <div class="action-title">Statistik Baca</div>
+                        <div class="action-subtitle">Lihat progress membaca</div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Recent Activity -->
+            <section class="recent-activity">
+                <h3 class="section-title">
+                    📋 Aktivitas Terbaru
+                </h3>
+                <ul class="activity-list">
+                    <li class="activity-item">
+                        <div class="activity-icon" style="background: #e8f5e8; color: #27ae60;">
+                            ✅
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-title">Berhasil meminjam "Belajar JavaScript"</div>
+                            <div class="activity-time">2 jam yang lalu</div>
+                        </div>
+                    </li>
+                    <li class="activity-item">
+                        <div class="activity-icon" style="background: #e8f4fd; color: #3498db;">
+                            📅
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-title">Booking "Design Patterns" berhasil dibuat</div>
+                            <div class="activity-time">1 hari yang lalu</div>
+                        </div>
+                    </li>
+                    <li class="activity-item">
+                        <div class="activity-icon" style="background: #fff3cd; color: #f39c12;">
+                            🔔
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-title">Reminder: "Clean Code" harus dikembalikan besok</div>
+                            <div class="activity-time">2 hari yang lalu</div>
+                        </div>
+                    </li>
+                    <li class="activity-item">
+                        <div class="activity-icon" style="background: #e8f5e8; color: #27ae60;">
+                            📚
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-title">Mengembalikan "The Pragmatic Programmer"</div>
+                            <div class="activity-time">3 hari yang lalu</div>
+                        </div>
+                    </li>
+                    <li class="activity-item">
+                        <div class="activity-icon" style="background: #ffe6e6; color: #e74c3c;">
+                            ⭐
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-title">Memberikan rating 5⭐ untuk "You Don't Know JS"</div>
+                            <div class="activity-time">1 minggu yang lalu</div>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <!-- <script>
+        // Check if user is logged in
+        function checkAuth() {
+            if (!window.currentUser && !window.newUser) {
+                // Redirect to login if not authenticated
+                window.location.href = 'login.html';
+                return false;
+            }
+            return true;
+        }
+
+        // Initialize user data
+        function initializeUser() {
+            const user = window.currentUser || window.newUser;
+            if (user) {
+                document.getElementById('userName').textContent = user.name || `${user.firstName} ${user.lastName}` || 'User';
+                document.getElementById('userRole').textContent = user.userType === 'admin' ? 'Administrator' : 'Member';
+                document.getElementById('welcomeName').textContent = (user.firstName || user.name || 'User').split(' ')[0];
+                
+                // Show admin-specific navigation for admin users
+                if (user.userType === 'admin') {
+                    addAdminNavigation();
+                    updateStatsForAdmin();
+                }
+            }
+        }
+
+        // Add admin navigation items
+        function addAdminNavigation() {
+            const sidebarNav = document.querySelector('.sidebar-nav');
+            const adminNavItems = `
+                <a href="#" class="nav-item" style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 1rem; padding-top: 1rem;">
+                    <i>👥</i> Kelola Anggota
+                </a>
+                <a href="#" class="nav-item">
+                    <i>📚</i> Kelola Buku
+                </a>
+                <a href="#" class="nav-item">
+                    <i>📊</i> Laporan
+                </a>
+                <a href="#" class="nav-item">
+                    <i>⚙️</i> Pengaturan Sistem
+                </a>
+            `;
+            sidebarNav.insertAdjacentHTML('beforeend', adminNavItems);
+        }
+
+        // Update stats for admin view
+        function updateStatsForAdmin() {
+            const statsCards = document.querySelectorAll('.stat-card');
+            const adminStats = [
+                { title: 'Total Anggota', value: '1,234', change: '↑ +45 bulan ini', icon: '👥' },
+                { title: 'Buku Tersedia', value: '8,567', change: '↑ +123 buku baru', icon: '📚' },
+                { title: 'Peminjaman Aktif', value: '456', change: '↓ -12 dari kemarin', icon: '📖' },
+                { title: 'Booking Pending', value: '89', change: '↑ +23 hari ini', icon: '📅' }
+            ];
+
+            statsCards.forEach((card, index) => {
+                if (adminStats[index]) {
+                    const stat = adminStats[index];
+                    card.querySelector('.stat-title').textContent = stat.title;
+                    card.querySelector('.stat-value').textContent = stat.value;
+                    card.querySelector('.stat-change').innerHTML = stat.change;
+                    card.querySelector('.stat-icon').textContent = stat.icon;
+                }
+            });
+
+            // Update welcome message for admin
+            document.getElementById('welcomeName').textContent = 'Admin';
+            document.querySelector('.welcome-subtitle').textContent = 'Kelola perpustakaan dengan mudah dan efisien';
+        }
+
+        // Sidebar toggle functionality
+        function initializeSidebar() {
+            const menuToggle = document.getElementById('menuToggle');
+            const sidebar = document.getElementById('sidebar');
+            const mainContent = document.getElementById('mainContent');
+            const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+            menuToggle.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    sidebar.classList.toggle('show');
+                    sidebarOverlay.classList.toggle('show');
+                } else {
+                    sidebar.classList.toggle('collapsed');
+                    mainContent.classList.toggle('expanded');
+                }
+            });
+
+            // Close sidebar when clicking overlay (mobile)
+            sidebarOverlay.addEventListener('click', () => {
+                sidebar.classList.remove('show');
+                sidebarOverlay.classList.remove('show');
+            });
+
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    sidebar.classList.remove('show');
+                    sidebarOverlay.classList.remove('show');
+                }
+            });
+        }
+
+        // Navigation active state
+        function initializeNavigation() {
+            const navItems = document.querySelectorAll('.nav-item');
+            
+            navItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    // Don't prevent default for actual links
+                    if (item.getAttribute('href') !== '#') {
+                        return;
+                    }
+                    
+                    e.preventDefault();
+                    
+                    // Remove active class from all items
+                    navItems.forEach(nav => nav.classList.remove('active'));
+                    
+                    // Add active class to clicked item
+                    item.classList.add('active');
+                    
+                    // Close mobile sidebar
+                    if (window.innerWidth <= 768) {
+                        document.getElementById('sidebar').classList.remove('show');
+                        document.getElementById('sidebarOverlay').classList.remove('show');
+                    }
+                });
+            });
+        }
+
+        // Logout functionality
+        function logout() {
+            const confirmLogout = confirm('Apakah Anda yakin ingin keluar?');
+            if (confirmLogout) {
+                // Clear user session
+                window.currentUser = null;
+                window.newUser = null;
+                
+                // Show logout message
+                alert('Anda telah berhasil keluar. Terima kasih!');
+                
+                // Redirect to home page
+                window.location.href = 'index.html';
+            }
+        }
+
+        // Notification functionality
+        function initializeNotifications() {
+            const notificationBtn = document.querySelector('.notification-btn');
+            
+            notificationBtn.addEventListener('click', () => {
+                const notifications = [
+                    'Buku "Clean Code" harus dikembalikan besok',
+                    'Booking "Design Patterns" sudah tersedia untuk diambil',
+                    'Denda untuk buku "JavaScript Guide" sebesar Rp 5,000'
+                ];
+                
+                const notificationList = notifications.map((notif, index) => 
+                    `${index + 1}. ${notif}`
+                ).join('\n\n');
+                
+                alert(`🔔 Notifikasi Anda:\n\n${notificationList}`);
+            });
+        }
+
+        // Profile functionality
+        function initializeProfile() {
+            const profileBtn = document.querySelector('.profile-btn');
+            
+            profileBtn.addEventListener('click', () => {
+                const user = window.currentUser || window.newUser;
+                if (user) {
+                    alert(`👤 Profil Anda:\n\nNama: ${user.name || `${user.firstName} ${user.lastName}` || 'User'}\nEmail: ${user.email}\nTipe: ${user.userType === 'admin' ? 'Administrator' : 'Member'}`);
+                }
+            });
+        }
+
+        // Animate stats on load
+        function animateStats() {
+            const statValues = document.querySelectorAll('.stat-value');
+            
+            statValues.forEach((stat, index) => {
+                const finalValue = stat.textContent;
+                stat.textContent = '0';
+                
+                setTimeout(() => {
+                    let current = 0;
+                    const target = parseInt(finalValue.replace(/\D/g, '')) || 0;
+                    const increment = target / 50;
+                    
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        
+                        if (finalValue.includes('Rp')) {
+                            stat.textContent = current > 0 ? `Rp ${Math.floor(current).toLocaleString()}` : 'Rp 0';
+                        } else {
+                            stat.textContent = Math.floor(current);
+                        }
+                    }, 20);
+                }, index * 200);
+            });
+        }
+
+        // Load dashboard data
+        function loadDashboardData() {
+            // Simulate loading state
+            document.body.classList.add('loading');
+            
+            setTimeout(() => {
+                document.body.classList.remove('loading');
+                animateStats();
+            }, 1000);
+        }
+
+        // Handle action cards
+        function initializeActionCards() {
+            const actionCards = document.querySelectorAll('.action-card');
+            
+            actionCards.forEach(card => {
+                card.addEventListener('click', (e) => {
+                    const title = card.querySelector('.action-title').textContent;
+                    
+                    // Only prevent default for placeholder cards
+                    if (card.getAttribute('href') === '#') {
+                        e.preventDefault();
+                        
+                        // Show different messages based on action
+                        let message = '';
+                        switch (title) {
+                            case 'Perpanjang Pinjam':
+                                message = 'Fitur perpanjangan peminjaman akan segera tersedia.';
+                                break;
+                            case 'Bayar Denda':
+                                message = 'Saat ini Anda tidak memiliki tunggakan denda.';
+                                break;
+                            case 'Buku Favorit':
+                                message = 'Halaman buku favorit sedang dalam pengembangan.';
+                                break;
+                            case 'Statistik Baca':
+                                message = 'Dashboard statistik membaca akan segera hadir!';
+                                break;
+                            default:
+                                message = `Fitur ${title} akan segera tersedia.`;
+                        }
+                        
+                        alert(message);
+                    }
+                });
+            });
+        }
+
+        // Update time display
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('id-ID');
+            const dateString = now.toLocaleDateString('id-ID', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            
+            // Update page title with current time
+            document.title = `Dashboard - LibraryHub (${timeString})`;
+        }
+
+        // Initialize everything
+        document.addEventListener('DOMContentLoaded', () => {
+            // Check authentication first
+            if (!checkAuth()) {
+                return;
+            }
+            
+            // Initialize all components
+            initializeUser();
+            initializeSidebar();
+            initializeNavigation();
+            initializeNotifications();
+            initializeProfile();
+            initializeActionCards();
+            loadDashboardData();
+            
+            // Update time every second
+            setInterval(updateTime, 1000);
+            updateTime();
+            
+            // Add welcome animation
+            setTimeout(() => {
+                document.querySelector('.welcome-section').style.animation = 'fadeInUp 0.8s ease';
+            }, 500);
+        });
+
+        // Auto-refresh dashboard data every 5 minutes
+        setInterval(() => {
+            loadDashboardData();
+        }, 5 * 60 * 1000);
+
+        // Handle page visibility change
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden) {
+                // Refresh data when user returns to tab
+                loadDashboardData();
+            }
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            // Alt + M to toggle sidebar
+            if (e.altKey && e.key === 'm') {
+                e.preventDefault();
+                document.getElementById('menuToggle').click();
+            }
+            
+            // Alt + L to logout
+            if (e.altKey && e.key === 'l') {
+                e.preventDefault();
+                logout();
+            }
+            
+            // Alt + N for notifications
+            if (e.altKey && e.key === 'n') {
+                e.preventDefault();
+                document.querySelector('.notification-btn').click();
+            }
+        });
+    </script> -->
+</body>
+</html>
+                        ↑ +1 dari bulan lalu
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <span class="stat-title">Booking Aktif</span>
+                        <span class="stat-icon">📅</span>
+                    </div>
+                    <div class="stat-value">2</div>
+                    <div class="stat-change positive">
+                        ↑ +2 booking baru
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <span class="stat-title">Buku Selesai</span>
+                        <span class="stat-icon">✅</span>
+                    </div>
+                    <div class="stat-value">15</div>
+                    <div class="stat-change positive">
+                        ↑ +5 bulan ini
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <span class="stat-title">Denda</span>
+                        <span class="stat-icon">💰</span>
+                    </div>
+                    <div class="stat-value">Rp 0</div>
+                    <div class="stat-change positive">
