@@ -1,0 +1,208 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f7f7f7;
+    color: #222;
+}
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 1rem;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.nav-grup {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo > img {
+    width: 150px;
+    height: 50px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links > li > a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links > a:hover {
+    color: yellow;
+}
+
+.tombol-login {
+    display: flex;
+gap:1rem;
+}
+.gradasi-utama {
+    width: 100%;
+    padding: 90px 0 70px 0;
+    background: linear-gradient(120deg, #6366f1 0%, #60a5fa 100%);
+    color: #fff;
+    text-align: center;
+    margin-bottom: 32px;
+}
+.gradasi-utama h1 {
+    font-size: 48px;
+    color: #fff;
+    margin-bottom: 12px;
+}
+.gradasi-utama p {
+    font-size:24px;
+    color: #e0e7ff;
+    margin-bottom: 0;
+}
+
+
+.kontainer-utama {
+    max-width: 1200px;
+    margin: 0 auto 32px auto;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0 32px;
+}
+
+.baris-flex {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.kartu {
+    flex: 1;
+    background: #fafafa;
+    border: 2px solid #eaeaea;
+    border-radius: 10px;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.kartu h2 {
+    font-size: 35px;
+    margin-bottom: 8px;
+}
+
+.judul-bagian {
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    margin: 32px 0 18px 0;
+}
+
+.baris-grid {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    margin-bottom: 48px;
+}
+
+.fitur, .pencapaian {
+    flex: 1;
+    background: #fff;
+    border: 1.5px solid #eaeaea;
+    border-radius: 10px;
+    padding: 24px 12px;
+    text-align: center;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.ikon-fitur, .ikon-pencapaian {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.judul-fitur, .judul-pencapaian {
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 1.15rem;
+}
+
+.deskripsi-fitur, .deskripsi-pencapaian {
+    color: #555;
+    font-size: 1.05rem;
+}
+
+
+.bagian-kontak {
+    background: #fff;
+    border-radius: 10px;
+    margin: 48px 0;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.bagian-kontak h2 {
+    margin-bottom: 18px;
+    font-size: 35px;
+}
+
+.baris-email {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+}
+
+.kartu-email {
+    background: transparent;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+
+footer{
+    background: #495171;
+    color: #fff;
+    padding: 32px 0 0 0;
+    margin-top: 32px;
+}
+
+.kontainer-kaki {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    gap: 32px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 24px;
+}
+
+.bagian-kaki {
+    flex: 1;
+    min-width: 180px;
+}
+
+.bagian-kaki h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.bagian-kaki ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bagian-kaki ul li {
+    margin-bottom: 6px;
+    font-size: 0.98rem;
+}
