@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.left-section {
+    flex: 1;
+    background-image: url('https://z-cdn-media.chatglm.cn/files/2871ee53-93d1-4e0c-9dec-b5fe8a6f6317_pasted_image_1757059261164.png?auth_key=1788595281-fe50a9628548427ca5bfed20650c5e51-0-501a5c97784daba46cc9233ecafc7b88');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.left-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.bookshelf-info {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    color: white;
+    z-index: 2;
+}
+
+.bookshelf-info h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.bookshelf-info p {
+    font-size: 1.2rem;
+    max-width: 500px;
+}
+
+.right-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: white;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 450px;
+}
+
+.form-header {
+    margin-bottom: 30px;
+}
+
+.form-header h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.form-header p {
+    color: #666;
+    font-size: 1rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #4a90e2;
+    outline: none;
+}
+
+.continue-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.continue-btn:hover {
+    background-color: #333333;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 25px 0;
+    color: #888;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: #eee;
+}
+
+.divider span {
+    padding: 0 15px;
+    font-size: 0.9rem;
+}
+
+.social-login {
+    margin-bottom: 20px;
+}
+
+.social-btn {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.social-btn:hover {
+    background-color: #f5f5f5;
+}
+
+.social-logo {
+    width: 36px;
+    height: 36px;
+    margin-right: 15px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.google-logo {
+    background-image: url('https://z-cdn-media.chatglm.cn/files/859572c7-0c0e-4958-b59e-644eff13d096_pasted_image_1757059568491.png?auth_key=1788601930-0a78ac379dcb40ee90cc14762765f242-0-6259671c3f2ec29c2d9b27b04ef1c0a8');
+}
+
+.facebook-logo {
+    background-image: url('https://z-cdn-media.chatglm.cn/files/5917c891-dc28-4997-9857-35ea0548e869_pasted_image_1757059973017.png?auth_key=1788601930-4c4764c104434cfc839eaabd54c0a84c-0-ebef70b59340ed60e10bf545a9e8b877');
+}
+
+.form-link {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}
+
+.form-link a {
+    color: #4a90e2;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.form-link a:hover {
+    text-decoration: underline;
+}
+
+.form-section {
+    display: none;
+}
+
+.form-section.active {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+    
+    .left-section {
+        min-height: 30vh;
+    }
+    
+    .bookshelf-info {
+        bottom: 20px;
+        left: 20px;
+    }
+    
+    .bookshelf-info h1 {
+        font-size: 1.8rem;
+    }
+    
+    .bookshelf-info p {
+        font-size: 1rem;
+    }
+    
+    .right-section {
+        padding: 20px;
+    }
+}
