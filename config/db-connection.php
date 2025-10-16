@@ -2,7 +2,7 @@
     $host = "localhost";
     $username = "root";
     $password = "";
-    $database = "exdora";
+    $database = "tugas_akhir";
 
     $connection = mysqli_connect($host, $username, $password, $database);
 

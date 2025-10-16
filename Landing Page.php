@@ -17,12 +17,12 @@
             <a href="#" class="logo"><img src="Logo.jpg" alt="Logo"></a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="Katalog.html">Catalogue</a></li>
+                <li><a href="../Halaman Lain/Katalog.php">Catalogue</a></li>
                 <li><a href="#">About</a></li>
             </ul>
 
             <div class="tombol-login">
-                <a href="Login.html" class="tombol tombol-garis">Login</a>
+                <a href="Halaman Lain/user/sign-up.php" class="tombol tombol-garis">Login</a>
             </div>
             <!-- <button class="menu-toggle" onclick="toggleMenu()">☰</button> -->
         </div>
@@ -112,6 +112,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script/script.js"></script>
 </body>
 </html>

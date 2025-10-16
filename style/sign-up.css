@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.left-section {
+    flex: 1;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+                url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&q=80') center/cover;
+    position: relative;
+    min-height: 100vh;
+}
+
+.left-section::before {
+    content: 'Sign up page';
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    color: #ccc;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.library-image {
+    width: 100%;
+    height: 100%;
+}
+
+.right-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 400px;
+}
+
+h1 {
+    font-size: 38px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #000;
+    
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="password"] {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="password"]:focus {
+    border-color: #000;
+}
+
+input::placeholder {
+    color: #9ca3af;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 5px 0;
+}
+
+input[type="checkbox"] {
+    margin-top: 3px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.checkbox-container label {
+    font-size: 13px;
+    color: #6b7280;
+    line-height: 1.4;
+}
+
+.link {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.btn-continue {
+    width: 100%;
+    padding: 13px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 8px;
+}
+
+.btn-continue:hover {
+    background-color: #333;
+}
+
+.divider {
+    text-align: center;
+    position: relative;
+    margin: 18px 0;
+}
+
+.divider::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+    background-color: #e5e7eb;
+}
+
+.divider span {
+    position: relative;
+    background-color: #fff;
+    padding: 0 15px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.btn-social {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background-color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: all 0.3s;
+}
+
+.btn-social:hover {
+    background-color: #f9fafb;
+    border-color: #9ca3af;
+}
+
+.btn-google {
+    margin-bottom: 12px;
+}
+
+.btn-facebook {
+    color: #1877F2;
+}
+
+.login-link {
+    text-align: center;
+    font-size: 14px;
+    color: #6b7280;
+    margin-top: 18px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .left-section {
+        display: none;
+    }
+    
+    .right-section {
+        flex: 1;
+    }
+    
+    h1 {
+        font-size: 32px;
+    }
+}
