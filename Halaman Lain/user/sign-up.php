@@ -9,6 +9,19 @@
     if(!$connection) {
         die('Error Connection to database: ' . mysqli_connect_error());
     }
+
+    $phone = $_POST['phone'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $query = "INSERT INTO users (name, email, password) VALUES ('$phone', '$email', '$password')";
+
+    if (mysqli_query($connection, $query)) {
+        header('Location: ../../Landing Page.php');
+        exit;
+    } else {
+        echo 'Error to store user: ' . mysqli_error($connection);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -30,11 +43,11 @@
                 <h1>Sign up</h1>
                 
                 <form id="signupForm" method="POST" action="../../actions/Sign Up/store.php">
-                    <input type="text" id="email" placeholder="Email or username" required>
+                    <input type="text" id="email" name="email" placeholder="Email or username" required>
                     
-                    <input type="tel" id="phone" placeholder="Phone Number" required>
+                    <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
                     
-                    <input type="password" id="password" placeholder="Password" required>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
                     
                     <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
                     
