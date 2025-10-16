@@ -58,7 +58,7 @@
                         </label>
                     </div>
                     
-                    <button type="submit" class="btn-continue">Continue</button>
+                    <button name="store" type="submit" class="btn-continue">Continue</button>
                     
                     <div class="divider">
                         <span>Or</span>
