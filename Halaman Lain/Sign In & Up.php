@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up / Log In</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style/Sign In & Up.css">
 </head>
 <body>
     <div class="left-section">
@@ -107,6 +107,6 @@
         </div>
     </div>
     
-    <script src="script.js"></script>
+    <script src="../script/Sign In & Up.js"></script>
 </body>
 </html>

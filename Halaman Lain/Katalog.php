@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Katalog Buku - LibraryHub</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
     <!-- Back Navigation -->
@@ -197,6 +197,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="../script/script.js"></script>
 </body>
 </html>

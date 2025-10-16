@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Perpustakaan Digital</title>
-  <link rel="stylesheet" href="aboutus.css" />
+  <link rel="stylesheet" href="../style/aboutus.css" />
 </head>
 <body>
 <nav>
@@ -153,6 +153,6 @@
       </div>
     </div>
   </footer>
-  <script src="aboutus.js"></script>
+  <script src="../script/aboutus.js"></script>
 </body>
 </html>
