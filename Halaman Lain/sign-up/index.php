@@ -1,29 +1,3 @@
-<?php
-    $host = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "tugas_akhir";
-
-    $connection = mysqli_connect($host, $username, $password, $database);
-
-    if(!$connection) {
-        die('Error Connection to database: ' . mysqli_connect_error());
-    }
-
-    $phone = $_POST['phone'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    $query = "INSERT INTO users (name, email, password) VALUES ('$phone', '$email', '$password')";
-
-    if (mysqli_query($connection, $query)) {
-        header('Location: ../../Landing Page.php');
-        exit;
-    } else {
-        echo 'Error to store user: ' . mysqli_error($connection);
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,7 +16,7 @@
             <div class="form-container">
                 <h1>Sign up</h1>
                 
-                <form id="signupForm" method="POST" action="../../actions/Sign Up/store.php">
+                <form method="POST" action="../../actions/sign-up/store.php" id="signupForm" >
                     <input type="text" id="email" name="email" placeholder="Email or username" required>
                     
                     <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
@@ -58,7 +32,7 @@
                         </label>
                     </div>
                     
-                    <button name="store" type="submit" class="btn-continue">Continue</button>
+                    <button name="store" action="../../actions/sign-up/store.php" type="submit" class="btn-continue">Continue</button>
                     
                     <div class="divider">
                         <span>Or</span>

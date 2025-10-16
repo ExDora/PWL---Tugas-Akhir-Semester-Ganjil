@@ -22,7 +22,7 @@
             </ul>
 
             <div class="tombol-login">
-                <a href="Halaman Lain/user/sign-up.php" class="tombol tombol-garis">Login</a>
+                <a href="Halaman Lain/sign-up/index.php" class="tombol tombol-garis">Login</a>
             </div>
             <!-- <button class="menu-toggle" onclick="toggleMenu()">☰</button> -->
         </div>
