@@ -1,9 +1,14 @@
+<?php
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Book - Ing</title>
     <link rel="icon" href="">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
 </head>
 
 <body>
