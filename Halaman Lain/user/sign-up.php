@@ -9,13 +9,6 @@
     if(!$connection) {
         die('Error Connection to database: ' . mysqli_connect_error());
     }
-
-    //Method POST
-    //super global variable => $_POST
-
-
-    //Method GET
-    //
 ?>
 
 <!DOCTYPE html>
