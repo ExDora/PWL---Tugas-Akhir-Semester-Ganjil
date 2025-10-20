@@ -107,13 +107,10 @@
                                     <?= $index + 1; ?>
                                 </td>
                                 <td>
-                                    <?= $user['name']; ?>
+                                    <?= $user['phone']; ?>
                                 </td>
                                 <td>
                                     <?= $user['email']; ?>
-                                </td>
-                                <td>
-                                    <?= $user['created_at']; ?>
                                 </td>
                             </tr>
                         <?php endforeach;?>
