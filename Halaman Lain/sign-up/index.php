@@ -32,7 +32,7 @@
                         </label>
                     </div>
                     
-                    <button name="store" action="../../actions/sign-up/store.php" type="submit" class="btn-continue">Continue</button>
+                    <button name="store" type="submit" class="btn-continue">Continue</button>
                     
                     <div class="divider">
                         <span>Or</span>
