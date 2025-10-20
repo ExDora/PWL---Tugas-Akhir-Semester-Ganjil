@@ -10,7 +10,7 @@
         $query = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
 
         $stmt = $connection->prepare($query);
-        $stmt->bind_param('iss', $name, $email, $passwordHashed);
+        $stmt->bind_param('sss', $name, $email, $passwordHashed);
         $stmt-> execute();
 
         if($stmt->affected_rows > 0) {

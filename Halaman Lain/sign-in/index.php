@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign up page</title>
+    <title>Sign in page</title>
     <link rel="stylesheet" href="../../style/sign-up.css">
 </head>
 <body>
@@ -14,21 +14,17 @@
         
         <div class="right-section">
             <div class="form-container">
-                <h1>Sign up</h1>
+                <h1>Sign In</h1>
                 
-                <form method="POST" action="../../actions/sign-up/store.php" id="signupForm" >
+                <form method="POST" action="../../actions/sign-up/store.php" id="signupForm">
                     <input type="text" id="email" name="email" placeholder="Email or username" required>
-                    
-                    <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
-                    
+
                     <input type="password" id="password" name="password" placeholder="Password" required>
-                    
-                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
                     
                     <div class="checkbox-container">
                         <input type="checkbox" id="terms" required>
                         <label for="terms">
-                            I agree to your <a href="#" class="link">Terms of Service</a> and <a href="#" class="link">Privacy Policy</a>
+                            Remember Me!
                         </label>
                     </div>
                     
@@ -56,7 +52,7 @@
                     </button>
                     
                     <p class="login-link">
-                        Have an account? <a href="../sign-in/index.php" class="link">Sign in your account</a>
+                        Do not have account? <a href="../sign-up/index.php" class="link">Sign up your account</a>
                     </p>
                 </form>
             </div>
