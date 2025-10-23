@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign up page</title>
-    <link rel="stylesheet" href="../../style/sign-up.css">
+    <title>Sign In page</title>
+    <link rel="stylesheet" href="../../style/sign-in.css">
 </head>
 <body>
     <div class="container">
@@ -14,25 +14,21 @@
         
         <div class="right-section">
             <div class="form-container">
-                <h1>Sign up</h1>
+                <h1>Sign in</h1>
                 
-                <form method="POST" action="../../actions/sign-up/store.php" id="signupForm" >
-                    <input type="text" id="email" name="email" placeholder="Email or username" required>
+                <form id="signupForm" method="POST" action="../../index.php">
+                    <input type="text" name="email" id="email" placeholder="Email or username" required>
                     
-                    <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
-                    
-                    <input type="password" id="password" name="password" placeholder="Password" required>
-                    
-                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
-                    
+                    <input type="password" name="password" id="password" placeholder="Password" required>
+                                        
                     <div class="checkbox-container">
-                        <input type="checkbox" id="terms" required>
-                        <label for="terms">
-                            I agree to your <a href="#" class="link">Terms of Service</a> and <a href="#" class="link">Privacy Policy</a>
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">
+                            Remember me <a href="#" class="link">Forgot Password?</a>
                         </label>
                     </div>
                     
-                    <button name="store" action="../../actions/sign-up/store.php" type="submit" class="btn-continue">Continue</button>
+                    <button type="submit" class="btn-continue">Continue</button>
                     
                     <div class="divider">
                         <span>Or</span>
@@ -56,13 +52,13 @@
                     </button>
                     
                     <p class="login-link">
-                        Have an account? <a href="../sign-in/index.php" class="link">Log in your account</a>
+                        Don't have an account? <a href="../sign-up/index.php" class="link">Create your account</a>
                     </p>
                 </form>
             </div>
         </div>
     </div>
     
-    <script src="../../script/sign-up.js"></script>
+    <script src="../../script/sign-in.js"></script>
 </body>
 </html>
