@@ -8,7 +8,7 @@
 <head>
     <title>Book - Ing</title>
     <link rel="icon" href="">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/dashboard.css">
 </head>
 
 <body>
@@ -19,6 +19,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="../Halaman Lain/Katalog.php">Catalogue</a></li>
                 <li><a href="#">About</a></li>
+                <li><a href="Halaman Lain/Dashboard/index.php">Dashboard</a></li>
             </ul>
 
             <div class="tombol-login">
