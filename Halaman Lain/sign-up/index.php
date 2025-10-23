@@ -57,8 +57,6 @@
                     
                     <p class="login-link">
 
-                        Have an account? <a href="../sign-in/index.php" class="link">Log in your account</a>
-
                         Have an account? <a href="../sign-in/index.php" class="link">Sign in your account</a>
 
                     </p>
