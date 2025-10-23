@@ -32,7 +32,7 @@
                         </label>
                     </div>
                     
-                    <button name="store" action="../../actions/sign-up/store.php" type="submit" class="btn-continue">Continue</button>
+                    <button name="store" type="submit" class="btn-continue">Continue</button>
                     
                     <div class="divider">
                         <span>Or</span>
@@ -56,7 +56,11 @@
                     </button>
                     
                     <p class="login-link">
+
                         Have an account? <a href="../sign-in/index.php" class="link">Log in your account</a>
+
+                        Have an account? <a href="../sign-in/index.php" class="link">Sign in your account</a>
+
                     </p>
                 </form>
             </div>

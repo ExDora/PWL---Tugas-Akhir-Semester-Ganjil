@@ -1,23 +1,26 @@
 <?php
     require_once '../../config/db-connection.php';
 
-    if(isset($_POST["store"])) {
+    if (isset($_POST["store"])) {
+        $email = htmlspecialchars($_POST['email']);
         $phone = htmlspecialchars($_POST['phone']);
-        $email = htmlspecialchars($_POST['email']); 
-        $password = ($_POST['password']);
+        $password = $_POST['password'];
         $passwordHashed = password_hash($password, PASSWORD_BCRYPT);
 
-        $query = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
-
+        $query = "INSERT INTO users (email, phone, password) VALUES (?, ?, ?)";
         $stmt = $connection->prepare($query);
-        $stmt->bind_param('iss', $name, $email, $passwordHashed);
-        $stmt-> execute();
 
-        if($stmt->affected_rows > 0) {
+        if (!$stmt) {
+            die("❌ Gagal prepare statement: " . $connection->error);
+        }
+
+        $stmt->bind_param('sss', $email, $phone, $passwordHashed);
+
+        if ($stmt->execute()) {
             header('Location: ../../index.php');
             exit();
         } else {
-            echo 'Error to store user: ' . $stmt->error;
+            echo "Error to store user: " . $stmt->error;
         }
     }
 ?>
