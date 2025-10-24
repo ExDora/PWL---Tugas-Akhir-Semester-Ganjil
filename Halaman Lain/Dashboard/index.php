@@ -1,14 +1,3 @@
-<?php
-require_once 'connection.php';
-
-// Get all borrowings
-$borrowings = $db->borrowings->find([], ['sort' => ['created_at' => -1]])->toArray();
-
-// Calculate stats
-$total = count($borrowings);
-$borrowed = count(array_filter($borrowings, fn($b) => $b['status'] === 'Dipinjam'));
-$returned = count(array_filter($borrowings, fn($b) => $b['status'] === 'Dikembalikan'));
-?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
