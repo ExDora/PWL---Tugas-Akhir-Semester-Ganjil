@@ -1,14 +1,21 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
-    background: #f7f7f7;
+    background: #161e31;
     color: #222;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding-top: 16px;
 }
 nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background-color: #161e31;
     backdrop-filter: blur(10px);
     padding: 1rem 1rem;
     z-index: 1000;
@@ -36,36 +43,79 @@ nav {
 
 .nav-links > li > a {
     text-decoration: none;
-    color: #2c3e50;
-    font-weight: 500;
-    transition: color 0.3s ease;
+    color: #ffffff;
+    font-weight: 600;
+    transition: color 0.2s ease;
+    padding: 6px 8px;
+    border-radius: 6px;
 }
 
-.nav-links > a:hover {
-    color: yellow;
+.nav-links > li > a:hover {
+    color: #4f46e5;
+    background: rgba(79,70,229,0.06);
 }
 
 .tombol-login {
     display: flex;
-gap:1rem;
+    gap:1rem;
+}
+.tombol-login a {
+    display: inline-block;
+    text-decoration: none;
+    background: #3498db;
+    color: #ffffff;
+    padding: 8px 14px;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(79,70,229,0.12);
+    border: 1px solid rgba(0,0,0,0.06);
+    font-weight: 600;
+}
+.tombol-login a:hover{
+    transform: translateY(-2px);
 }
 .gradasi-utama {
-    width: 100%;
-    padding: 90px 0 70px 0;
-    background: linear-gradient(120deg, #6366f1 0%, #60a5fa 100%);
-    color: #fff;
+    min-height: 90vh;
+    background-image: url('../Gambar/library.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    margin-bottom: 32px;
+    color: rgb(255, 255, 255);
+    position: relative;
+    overflow: hidden;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+.gradasi-utama::after{
+    content: '';
+    position: absolute;
+    right: -10%;
+    top: 0;
+    width: 60%;
+    height: 100%;
+    background: rgba(255,255,255,0.05);
+    transform: skewX(-18deg);
 }
 .gradasi-utama h1 {
-    font-size: 48px;
+    font-size: 44px;
     color: #fff;
     margin-bottom: 12px;
+    font-weight: 700;
 }
 .gradasi-utama p {
-    font-size:24px;
-    color: #e0e7ff;
-    margin-bottom: 0;
+    font-size:18px;
+    color: #e7ecff;
+    margin: 0 auto;
+    max-width: 760px;
+    line-height: 1.7;
+}
+
+.hero-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 
@@ -82,20 +132,26 @@ gap:1rem;
     display: flex;
     gap: 24px;
     margin-bottom: 48px;
+    flex-wrap: wrap;
 }
 
 .kartu {
-    flex: 1;
-    background: #fafafa;
-    border: 2px solid #eaeaea;
-    border-radius: 10px;
-    padding: 24px;
+    flex: 1 1 48%;
+    background: #1E293B;
+    border-radius: 12px;
+    padding: 28px;
     box-sizing: border-box;
+    box-shadow: 0 8px 20px rgba(16,24,40,0.06);
+    border: 1px solid rgba(0,0,0,0.06);
 }
 
 .kartu h2 {
-    font-size: 35px;
+    font-size: 26px;
     margin-bottom: 8px;
+    color: #ffffff;
+}
+.kartu p {
+    color: #ffffff;
 }
 
 .judul-bagian {
@@ -103,40 +159,41 @@ gap:1rem;
     font-size: 35px;
     font-weight: bold;
     margin: 32px 0 18px 0;
+    color: #ffffff;
 }
-
 .baris-grid {
     display: flex;
-    gap: 18px;
+    gap: 22px;
     justify-content: center;
     margin-bottom: 48px;
+    flex-wrap: wrap;
 }
 
 .fitur, .pencapaian {
-    flex: 1;
+    flex: 0 1 230px;
     background: #fff;
-    border: 1.5px solid #eaeaea;
-    border-radius: 10px;
-    padding: 24px 12px;
+    border-radius: 12px;
+    padding: 22px 18px;
     text-align: center;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    box-shadow: 0 12px 30px rgba(16,24,40,0.06);
+    border: 1px solid rgba(0,0,0,0.06);
 }
 
 .ikon-fitur, .ikon-pencapaian {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #222;
+    font-size: 1.75rem;
+    margin-bottom: 12px;
+    color: #5b4fe6;
 }
 
 .judul-fitur, .judul-pencapaian {
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 6px;
-    font-size: 1.15rem;
+    font-size: 1.05rem;
 }
 
 .deskripsi-fitur, .deskripsi-pencapaian {
-    color: #555;
-    font-size: 1.05rem;
+    color: #6b7280;
+    font-size: 0.98rem;
 }
 
 
@@ -151,21 +208,25 @@ gap:1rem;
 
 .bagian-kontak h2 {
     margin-bottom: 18px;
-    font-size: 35px;
+    font-size: 28px;
 }
+
 
 .baris-email {
     display: flex;
     justify-content: center;
-    gap: 48px;
+    gap: 28px;
+    flex-wrap: wrap;
 }
 
 .kartu-email {
-    background: transparent;
-    border-radius: 8px;
-    padding: 12px 24px;
-    font-size: 1rem;
+    background: #fff;
+    border-radius: 10px;
+    padding: 16px 22px;
+    font-size: 0.98rem;
     cursor: pointer;
+    box-shadow: 0 8px 26px rgba(16,24,40,0.05);
+    border: 1px solid rgba(0,0,0,0.04);
 }
 
 
@@ -205,4 +266,20 @@ footer{
 .bagian-kaki ul li {
     margin-bottom: 6px;
     font-size: 0.98rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px){
+    .kartu { flex: 1 1 100%; }
+    .baris-grid { gap: 14px; }
+    .fitur, .pencapaian { flex: 1 1 45%; }
+    .gradasi-utama { padding: 110px 20px 60px 20px; }
+    .gradasi-utama h1 { font-size: 32px; }
+    .gradasi-utama p { font-size: 15px; }
+}
+
+@media (max-width: 520px){
+    .fitur, .pencapaian { flex: 1 1 100%; }
+    .nav-links { display: none; }
+    .logo > img { width: 120px; height: 40px; }
 }

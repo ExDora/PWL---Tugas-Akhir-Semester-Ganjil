@@ -7,32 +7,35 @@
   <link rel="stylesheet" href="../style/aboutus.css" />
 </head>
 <body>
-<nav>
+    <nav>
         <div class="nav-grup">
             <a href="#" class="logo"><img src="Logo.jpg" alt="Logo"></a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#">Catalogue</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="Halaman Lain/Katalog.php">Catalogue</a></li>
+                <li><a href="Halaman Lain/aboutus.php">About</a></li>
             </ul>
 
             <div class="tombol-login">
-                <a href="Login.html" class="tombol tombol-garis">Login</a>
+                <a href="Halaman Lain/sign-up/index.php" class="tombol tombol-garis">Sign Up</a>
             </div>
             <!-- <button class="menu-toggle" onclick="toggleMenu()">☰</button> -->
         </div>
     </nav>
 
 
+
   <div class="gradasi-utama">
-    <h1>Tentang Perpustakaan Digital</h1>
-    <p>
-      Perpustakaan Digital hadir untuk memberikan kemudahan akses<br>
-      ilmu pengetahuan kapan saja dan di mana saja. Dengan koleksi buku,<br>
-      jurnal, dan referensi online yang lengkap, kami berkomitmen untuk<br>
-      mendukung kegiatan belajar, penelitian, dan pengembangan diri<br>
-      masyarakat.
-    </p>
+    <div class="hero-inner">
+      <h1>Tentang Perpustakaan Digital</h1>
+      <p>
+        Perpustakaan Digital hadir untuk memberikan kemudahan akses
+        ilmu pengetahuan kapan saja dan di mana saja. Dengan koleksi buku,
+        jurnal, dan referensi online yang lengkap, kami berkomitmen untuk
+        mendukung kegiatan belajar, penelitian, dan pengembangan diri
+        masyarakat.
+      </p>
+    </div>
   </div>
   <div class="kontainer-utama">
     <div class="baris-flex">

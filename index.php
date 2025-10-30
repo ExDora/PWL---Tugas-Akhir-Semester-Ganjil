@@ -22,7 +22,7 @@
             </ul>
 
             <div class="tombol-login">
-                <a href="Halaman Lain/sign-up/index.php" class="tombol tombol-garis">Login</a>
+                <a href="Halaman Lain/sign-up/index.php" class="tombol tombol-garis">Sign Up</a>
             </div>
             <!-- <button class="menu-toggle" onclick="toggleMenu()">☰</button> -->
         </div>
@@ -33,7 +33,7 @@
             <h1>Perpustakaan Digital</h1>
             <p>Sistem manajemen perpustakaan digital yang memudahkkan akses buku, peminjaman online, dan layanan perpustakaan modern untuk semua</p>
             <div class="tombol-atas">
-                <a href="Katalog.html" class="tombol tombol-penuh tombol-gede">Jelajahi Koleksi</a>
+                <a href="Katalog.html" class="tombol tombol-garis tombol-gede">Jelajahi Koleksi</a>
                 <a href="Signup.html" class="tombol tombol-garis tombol-gede">Bergabung Sekarang</a>
             </div>
         </div>
