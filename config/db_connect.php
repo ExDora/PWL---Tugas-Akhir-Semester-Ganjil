@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "root"; // default Laragon
 $pass = "";     // kalau kamu kasih password di MySQL, isi di sini
-$dbname = "login_db"; // pastikan database ini udah ada
+$dbname = "tugas_akhir"; // pastikan database ini udah ada
 
 $conn = mysqli_connect($host, $user, $pass, $dbname);
 
