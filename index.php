@@ -1,8 +1,3 @@
-<?php
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +28,7 @@
             <h1>Perpustakaan Digital</h1>
             <p>Sistem manajemen perpustakaan digital yang memudahkkan akses buku, peminjaman online, dan layanan perpustakaan modern untuk semua</p>
             <div class="tombol-atas">
-                <a href="Katalog.html" class="tombol tombol-garis tombol-gede">Jelajahi Koleksi</a>
+                <a href="Halaman Lain/Katalog.php" class="tombol tombol-garis tombol-gede">Jelajahi Koleksi</a>
                 <a href="Signup.html" class="tombol tombol-garis tombol-gede">Bergabung Sekarang</a>
             </div>
         </div>
