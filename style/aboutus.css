@@ -62,7 +62,7 @@ nav {
 .tombol-login a {
     display: inline-block;
     text-decoration: none;
-    background: #3498db;
+    background: #2563EA;
     color: #ffffff;
     padding: 8px 14px;
     border-radius: 15px;
@@ -143,6 +143,7 @@ nav {
     box-sizing: border-box;
     box-shadow: 0 8px 20px rgba(16,24,40,0.06);
     border: 1px solid rgba(0,0,0,0.06);
+    margin-bottom: 50px;
 }
 
 .kartu h2 {
@@ -165,13 +166,13 @@ nav {
     display: flex;
     gap: 22px;
     justify-content: center;
-    margin-bottom: 48px;
+    margin-bottom: 80px;
     flex-wrap: wrap;
 }
 
 .fitur, .pencapaian {
-    flex: 0 1 230px;
-    background: #fff;
+    flex: 0 1 267px;
+    background: #1E293B;
     border-radius: 12px;
     padding: 22px 18px;
     text-align: center;
@@ -189,18 +190,19 @@ nav {
     font-weight: 700;
     margin-bottom: 6px;
     font-size: 1.05rem;
+    color: #ffffff;
 }
 
 .deskripsi-fitur, .deskripsi-pencapaian {
-    color: #6b7280;
+    color: #ffffff;
     font-size: 0.98rem;
 }
 
 
 .bagian-kontak {
-    background: #fff;
+    background: #1E293B;
     border-radius: 10px;
-    margin: 48px 0;
+    margin-bottom: 50px; 
     padding: 24px;
     text-align: center;
     box-shadow: 0 1px 4px rgba(0,0,0,0.04);
@@ -209,6 +211,7 @@ nav {
 .bagian-kontak h2 {
     margin-bottom: 18px;
     font-size: 28px;
+    color: #ffffff;
 }
 
 
@@ -220,13 +223,14 @@ nav {
 }
 
 .kartu-email {
-    background: #fff;
+    background: #1E293B;
     border-radius: 10px;
     padding: 16px 22px;
     font-size: 0.98rem;
     cursor: pointer;
     box-shadow: 0 8px 26px rgba(16,24,40,0.05);
     border: 1px solid rgba(0,0,0,0.04);
+    color: #ffffff;
 }
 
 

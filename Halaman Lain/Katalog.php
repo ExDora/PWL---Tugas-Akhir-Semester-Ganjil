@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Katalog Buku - LibraryHub</title>
-    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/Katalog.css">
 </head>
 <body>
     <!-- Back Navigation -->
@@ -29,9 +29,9 @@
         <div class="nav-grup">
             <a href="#" class="logo"><img src="Logo.jpg" alt="Logo"></a>
             <ul class="nav-links">
-                <li><a href="Landing Page.html">Home</a></li>
-                <li><a href="#">Catalogue</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="../index.php">Home</a></li>
+                <li><a href="../Halaman Lain/Katalog.php">Catalogue</a></li>
+                <li><a href="../Halaman Lain/aboutus.php">About</a></li>
             </ul>
 
             <div class="tombol-login">

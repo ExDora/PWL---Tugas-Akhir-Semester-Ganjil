@@ -11,8 +11,8 @@
         <div class="nav-grup">
             <a href="#" class="logo"><img src="Logo.jpg" alt="Logo"></a>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="Halaman Lain/Katalog.php">Catalogue</a></li>
+                <li><a href="../index.php">Home</a></li>
+                <li><a href="../Halaman Lain/Katalog.php">Catalogue</a></li>
                 <li><a href="Halaman Lain/aboutus.php">About</a></li>
             </ul>
 
