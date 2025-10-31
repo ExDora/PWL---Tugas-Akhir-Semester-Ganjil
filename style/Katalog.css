@@ -1,18 +1,21 @@
 * {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
+    background: #161E31;
 }
 
 nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background: #161E32;
+    background: #161E31;
     backdrop-filter: blur(10px);
     padding: 1rem 1rem;
     z-index: 1000;
@@ -40,7 +43,7 @@ nav {
 
 .nav-links > li > a {
     text-decoration: none;
-    color: white;
+    color: #ffffff;
     font-weight: 600;
     transition: color 0.2s ease;
     padding: 6px 8px;
@@ -75,7 +78,7 @@ nav {
 
 
 .tombol-garis {
-    background: #2563ea;
+    background: #2563EA;
     color: white;
     border: none;
     transition: all 0.3s ease;
@@ -85,130 +88,6 @@ nav {
 .tombol:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
-}
-
-
-/* Body - Landing Page */
-.atas {
-    min-height: 90vh;
-    background-image: url('../Gambar/library.jpg');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: rgb(255, 255, 255);
-    position: relative;
-    overflow: hidden;
-    opacity: 0.9;
-}
-
-.konten > p {
-    color: rgb(255, 255, 255);
-}
-
-.atas::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff08" points="0,0 1000,300 1000,1000 0,700"/></svg>');
-    background-size: cover;
-}
-
-.konten {
-    max-width: 800px;
-    z-index: 2;
-    position: relative;
-    animation: fadeInUp 1s ease;
-}
-
-.konten > h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
-
-}
-
-.konten > p {
-    font-size: 1.3rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-}
-
-.tombol-atas {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.tombol-gede {
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
-}
-
-.fitur {
-    padding: 5rem 2rem;
-    background-color: #161E32;
-}
-
-.kontainer {
-    max-width: 1200px;
-    margin: 0 auto;
-    }
-
-.section-title {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: white;
-}
-
-.fitur-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-        }
-
-.fitur-box {
-    background: #1E293B;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.feature-box:hover {
-    transform: translateY(-10px);
-}
-
-.logo-fitur {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, #2563EA);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1rem;
-    font-size: 2rem;
-    color: white;
-}
-
-.fitur-box > h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: white;
-}
-
-.fitur-box > p {
-    color: white;
-    line-height: 1.6;
 }
 
 
@@ -263,20 +142,6 @@ footer {
 }
 
 
-/* Katalog */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f2f2f2;
-    line-height: 1.6;
-}
-
 /* Header */
 .header {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -294,7 +159,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff05" points="0,0 1000,300 1000,1000 0,700"/></svg>');
+    background-image: url('../Gambar/library.jpg');
     background-size: cover;
 }
 
@@ -344,7 +209,7 @@ body {
 
 /* Search and Filter Section */
 .pencarian {
-    background: white;
+    background: #1E293B ;
     padding: 2rem;
     margin: -3rem 2rem 2rem;
     border-radius: 15px;
@@ -389,19 +254,11 @@ body {
     min-width: 300px;
 }
 
-/* .ikon-pencarian {
-    position: absolute;
-    left: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #7f8c8d;
-    font-size: 1.1rem;
-    z-index: 5;
-} */
+
 
 .tombol-cari {
     padding: 1rem 2rem;
-    background: linear-gradient(135deg, #3498db, #2980b9);
+    background-color: #2563EA;
     color: white;
     border: none;
     border-radius: 12px;
@@ -431,7 +288,7 @@ body {
 
 .label-filter {
     font-weight: 600;
-    color: #2c3e50;
+    color: #ffffff;
     font-size: 0.9rem;
 }
 
@@ -483,7 +340,7 @@ body {
 }
 
 .results-info {
-    color: #2c3e50;
+    color: #ffffff;
     font-weight: 600;
 }
 
@@ -510,7 +367,7 @@ body {
 }
 
 .view-btn.active {
-    background: #3498db;
+    background: #2563EA;
     color: white;
 }
 
@@ -538,7 +395,7 @@ body {
 }
 
 .book-card {
-    background: white;
+    background: #1E293B;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -600,10 +457,6 @@ body {
     margin-bottom: 0.5rem;
     line-height: 1.4;
     display: -webkit-box;
-<<<<<<< HEAD
-    /* -webkit-line-clamp: 2; */
-=======
->>>>>>> 695341d58e481c60eaa7ad218e753a0e84100cb1
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -662,6 +515,7 @@ body {
 .status-text {
     font-size: 0.9rem;
     font-weight: 600;
+    color: #ffffff;
 }
 
 .book-actions {
@@ -681,7 +535,7 @@ body {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #3498db, #2980b9);
+    background-color: #2563EA;
     color: white;
 }
 
@@ -767,7 +621,7 @@ body {
 }
 
 .page-btn.active {
-    background: #3498db;
+    background: #2563EA;
     color: white;
     border-color: #3498db;
 }
@@ -916,17 +770,25 @@ body {
     overflow: hidden;
 }
 
+.book-title{
+    color: #ffffff;
+}
+
+.book-author{
+    color: #ffffff;
+}
+
 .modal-book-title {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #2c3e50;
+    color: #ffffff;
     margin-bottom: 1rem;
     text-align: center;
 }
 
 .modal-book-author {
     text-align: center;
-    color: #7f8c8d;
+    color: #ffffff;
     font-size: 1.1rem;
     margin-bottom: 2rem;
 }
@@ -939,7 +801,7 @@ body {
 }
 
 .detail-item {
-    background: #f8f9fa;
+    background: #1E293B;
     padding: 1rem;
     border-radius: 10px;
     text-align: center;
@@ -947,13 +809,13 @@ body {
 
 .detail-label {
     font-size: 0.9rem;
-    color: #7f8c8d;
+    color: #ffffff;
     margin-bottom: 0.5rem;
 }
 
 .detail-value {
     font-weight: 600;
-    color: #2c3e50;
+    color: #ffffff;
 }
 
 .modal-description {
@@ -975,7 +837,7 @@ body {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: #3498db;
+    background: #2563EA;
     color: white;
     border: none;
     cursor: pointer;

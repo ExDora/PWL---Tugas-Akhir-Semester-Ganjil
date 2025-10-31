@@ -13,7 +13,7 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="../Halaman Lain/Katalog.php">Catalogue</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="../Halaman Lain/aboutus.php">About</a></li>
             </ul>
 
             <div class="tombol-login">
