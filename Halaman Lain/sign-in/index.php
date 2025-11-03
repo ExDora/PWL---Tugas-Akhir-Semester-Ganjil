@@ -16,8 +16,18 @@
             <div class="form-container">
                 <h1>Sign in</h1>
                 
-                <form id="signupForm" method="POST" action="../../index.php">
-                    <input type="text" name="email" id="email" placeholder="Email or username" required>
+                <?php if(isset($_GET['error'])): ?>
+                    <div style="color: #ef4444; margin-bottom: 1rem; text-align: center; font-size: 0.875rem;">
+                        <?php if($_GET['error'] == 2): ?>
+                            Terjadi kesalahan sistem. Silakan coba lagi.
+                        <?php else: ?>
+                            Email/nomor telepon atau password salah.
+                        <?php endif; ?>
+                    </div>
+                <?php endif; ?>
+
+                <form id="signinForm" method="POST" action="../../actions/sign-in/login.php">
+                    <input type="text" name="email" id="email" placeholder="Email atau nomor telepon" required>
                     
                     <input type="password" name="password" id="password" placeholder="Password" required>
                                         

@@ -88,16 +88,7 @@ nav {
     opacity: 0.9;
     margin-bottom: 20px;
 }
-.gradasi-utama::after{
-    content: '';
-    position: absolute;
-    right: -10%;
-    top: 0;
-    width: 60%;
-    height: 100%;
-    background: rgba(255,255,255,0.05);
-    transform: skewX(-18deg);
-}
+
 .gradasi-utama h1 {
     font-size: 44px;
     color: #fff;
