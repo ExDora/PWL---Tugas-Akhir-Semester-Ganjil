@@ -1,5 +1,20 @@
 <?php
+    session_start();
+    require_once '../../actions/products/get-products.php';
+    require_once '../../actions/products/get-total-products.php';
     require_once '../../actions/sign-up/get-users.php';
+
+
+    // if (!isset($_SESSION['usersss'])) {
+    //     header(header: 'Location: ../../index.php');
+    //     exit;
+    // }
+
+    // $userss = $_SESSION['usersss'];
+
+    $usersss = getUsersss($_GET);
+
+    $currentPage = isset($_GET['page']) ? (int) $_GET['page'] : 1;
 ?>
 
 <!DOCTYPE html>
@@ -115,7 +130,7 @@
             <div class="header-right">
                 <div class="search-box">
                     <i class="fas fa-search search-icon"></i>
-                    <input type="text" placeholder="Cari user...">
+                    <input name="keyword" type="text" placeholder="Cari user...">
                 </div>
                 <button class="notification-btn">
                     🔔
@@ -257,17 +272,16 @@
                     Menampilkan <strong>1-10</strong> dari <strong>856</strong> users
                 </div>
                 <div class="pagination-buttons">
-                    <button class="pagination-btn" disabled>
-                        <i class="fas fa-chevron-left"></i> Previous
-                    </button>
-                    <button class="pagination-btn active">1</button>
-                    <button class="pagination-btn">2</button>
-                    <button class="pagination-btn">3</button>
-                    <button class="pagination-btn">4</button>
-                    <button class="pagination-btn">5</button>
-                    <button class="pagination-btn">
-                        Next <i class="fas fa-chevron-right"></i>
-                    </button>
+                    <a href="?page=<?= $currentPage -1?>">
+                        <button class="pagination-btn">
+                            <i class="fas fa-chevron-left"></i> Previous
+                        </button>
+                    </a>
+                    <a href="?page=<?= $currentPage + 1?>">
+                        <button class="pagination-btn">
+                            Next <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </a>
                 </div>
             </div>
         </section>
