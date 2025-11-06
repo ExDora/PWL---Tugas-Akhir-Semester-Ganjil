@@ -1,20 +1,19 @@
 <?php
     session_start();
+    require_once '../../config/db-connection.php';
     require_once '../../actions/products/get-products.php';
     require_once '../../actions/products/get-total-products.php';
     require_once '../../actions/sign-up/get-users.php';
 
-
-    // if (!isset($_SESSION['usersss'])) {
-    //     header(header: 'Location: ../../index.php');
-    //     exit;
-    // }
-
-    // $userss = $_SESSION['usersss'];
-
-    $usersss = getUsersss($_GET);
-
     $currentPage = isset($_GET['page']) ? (int) $_GET['page'] : 1;
+    if ($currentPage < 1) $currentPage = 1;
+
+    $users = getUsersss($_GET);
+
+    $limit = 5;
+    $totalPages = ceil($totalUsersss / $limit);
+    $startData = ($currentPage - 1) * $limit + 1;
+    $endData = min($currentPage * $limit, $totalUsersss);
 ?>
 
 <!DOCTYPE html>
@@ -272,16 +271,21 @@
                     Menampilkan <strong>1-10</strong> dari <strong>856</strong> users
                 </div>
                 <div class="pagination-buttons">
-                    <a href="?page=<?= $currentPage -1?>">
-                        <button class="pagination-btn">
+                    <?php if ($currentPage > 1): ?>
+                        <a href="?page=<?= $currentPage -1?>">
+                            <button class="pagination-btn">
                             <i class="fas fa-chevron-left"></i> Previous
-                        </button>
-                    </a>
-                    <a href="?page=<?= $currentPage + 1?>">
-                        <button class="pagination-btn">
+                            </button>
+                        </a>
+                    <?php endif; ?>
+
+                    <?php if ($currentPage < $totalPages): ?>
+                        <a href="?page=<?= $currentPage + 1?>">
+                            <button class="pagination-btn">
                             Next <i class="fas fa-chevron-right"></i>
-                        </button>
-                    </a>
+                            </button>
+                        </a>
+                    <?php endif; ?>
                 </div>
             </div>
         </section>
