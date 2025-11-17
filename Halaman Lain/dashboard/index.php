@@ -15,7 +15,7 @@
     <!-- Sidebar Navigation -->
     <aside class="sidebar">
         <div class="sidebar-header">
-            <a href="../../index.php"><h2>📚 Library</h2></a>
+            <a href="../../index.php"><h2>Book - Ing</h2></a>
         </div>
         <nav class="sidebar-nav">
             <a href="#" class="nav-item active" data-page="dashboard">

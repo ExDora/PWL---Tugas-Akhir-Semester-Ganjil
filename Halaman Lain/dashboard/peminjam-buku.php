@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -15,7 +17,7 @@
                     📚
                 </div>
                 <div class="logo-text">
-                    <h2>LibraryMS</h2>
+                    <h2>Book - Ing</h2>
                     <p>Admin Panel</p>
                 </div>
             </div>
@@ -239,17 +241,21 @@
                     Menampilkan <strong>1-10</strong> dari <strong>342</strong> peminjaman
                 </div>
                 <div class="pagination-buttons">
-                    <button class="pagination-btn" disabled>
-                        <i class="fas fa-chevron-left"></i> Previous
-                    </button>
-                    <button class="pagination-btn active">1</button>
-                    <button class="pagination-btn">2</button>
-                    <button class="pagination-btn">3</button>
-                    <button class="pagination-btn">4</button>
-                    <button class="pagination-btn">5</button>
-                    <button class="pagination-btn">
-                        Next <i class="fas fa-chevron-right"></i>
-                    </button>
+                    <?php if ($currentPage > 1): ?>
+                        <a href="?page=<?= $currentPage -1?>">
+                            <button class="pagination-btn">
+                            <i class="fas fa-chevron-left"></i> Previous
+                            </button>
+                        </a>
+                    <?php endif; ?>
+
+                    <?php if ($currentPage < $totalPages): ?>
+                        <a href="?page=<?= $currentPage + 1?>">
+                            <button class="pagination-btn">
+                            Next <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </a>
+                    <?php endif; ?>
                 </div>
             </div>
         </section>
