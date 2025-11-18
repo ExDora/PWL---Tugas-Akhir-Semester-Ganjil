@@ -130,7 +130,7 @@
                     <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Manajemen Kategori</h2>
                     <p style="color: var(--text-secondary);">Kelola kategori buku untuk memudahkan organisasi perpustakaan</p>
                 </div>
-                <button class="btn btn-primary">
+                <button class="btn btn-primary" onclick="openPopup()">
                     <i class="fas fa-plus"></i> Tambah Kategori Baru
                 </button>
             </div>
@@ -138,125 +138,7 @@
 
         <!-- CATEGORY GRID -->
         <section class="category-grid">
-            <div class="category-card">
-                <div class="category-icon">💻</div>
-                <h3 class="category-name">Teknologi</h3>
-                <p class="category-count">284 Buku</p>
-                <div style="display: flex; gap: 0.5rem; margin-top: 1rem; justify-content: center;">
-                    <button class="btn btn-sm btn-outline">Edit</button>
-                    <button class="btn btn-sm btn-danger">Hapus</button>
-                </div>
-            </div>
 
-            <div class="category-card">
-                <div class="category-icon">📖</div>
-                <h3 class="category-name">Fiksi</h3>
-                <p class="category-count">412 Buku</p>
-                <div style="display: flex; gap: 0.5rem; margin-top: 1rem; justify-content: center;">
-                    <button class="btn btn-sm btn-outline">Edit</button>
-                    <button class="btn btn-sm btn-danger">Hapus</button>
-                </div>
-            </div>
-
-            <div class="category-card">
-                <div class="category-icon">🏛️</div>
-                <h3 class="category-name">Sejarah</h3>
-                <p class="category-count">156 Buku</p>
-                <div style="display: flex; gap: 0.5rem; margin-top: 1rem; justify-content: center;">
-                    <button class="btn btn-sm btn-outline">Edit</button>
-                    <button class="btn btn-sm btn-danger">Hapus</button>
-                </div>
-            </div>
-
-            <div class="category-card">
-                <div class="category-icon">🔬</div>
-                <h3 class="category-name">Sains</h3>
-                <p class="category-count">198 Buku</p>
-                <div style="display: flex; gap: 0.5rem; margin-top: 1rem; justify-content: center;">
-                    <button class="btn btn-sm btn-outline">Edit</button>
-                    <button class="btn btn-sm btn-danger">Hapus</button>
-                </div>
-            </div>
-
-            <div class="category-card">
-                <div class="category-icon">💼</div>
-                <h3 class="category-name">Bisnis</h3>
-                <p class="category-count">142 Buku</p>
-                <div style="display: flex; gap: 0.5rem; margin-top: 1rem; justify-content: center;">
-                    <button class="btn btn-sm btn-outline">Edit</button>
-                    <button class="btn btn-sm btn-danger">Hapus</button>
-                </div>
-            </div>
-
-            <div class="category-card">
-                <div class="category-icon">🎨</div>
-                <h3 class="category-name">Seni & Desain</h3>
-                <p class="category-count">87 Buku</p>
-                <div style="display: flex; gap: 0.5rem; margin-top: 1rem; justify-content: center;">
-                    <button class="btn btn-sm btn-outline">Edit</button>
-                    <button class="btn btn-sm btn-danger">Hapus</button>
-                </div>
-            </div>
-
-            <div class="category-card">
-                <div class="category-icon">🌍</div>
-                <h3 class="category-name">Geografi</h3>
-                <p class="category-count">64 Buku</p>
-                <div style="display: flex; gap: 0.5rem; margin-top: 1rem; justify-content: center;">
-                    <button class="btn btn-sm btn-outline">Edit</button>
-                    <button class="btn btn-sm btn-danger">Hapus</button>
-                </div>
-            </div>
-
-            <div class="category-card">
-                <div class="category-icon">🧠</div>
-                <h3 class="category-name">Psikologi</h3>
-                <p class="category-count">92 Buku</p>
-                <div style="display: flex; gap: 0.5rem; margin-top: 1rem; justify-content: center;">
-                    <button class="btn btn-sm btn-outline">Edit</button>
-                    <button class="btn btn-sm btn-danger">Hapus</button>
-                </div>
-            </div>
-
-            <div class="category-card">
-                <div class="category-icon">📚</div>
-                <h3 class="category-name">Pendidikan</h3>
-                <p class="category-count">178 Buku</p>
-                <div style="display: flex; gap: 0.5rem; margin-top: 1rem; justify-content: center;">
-                    <button class="btn btn-sm btn-outline">Edit</button>
-                    <button class="btn btn-sm btn-danger">Hapus</button>
-                </div>
-            </div>
-
-            <div class="category-card">
-                <div class="category-icon">🍳</div>
-                <h3 class="category-name">Kuliner</h3>
-                <p class="category-count">45 Buku</p>
-                <div style="display: flex; gap: 0.5rem; margin-top: 1rem; justify-content: center;">
-                    <button class="btn btn-sm btn-outline">Edit</button>
-                    <button class="btn btn-sm btn-danger">Hapus</button>
-                </div>
-            </div>
-
-            <div class="category-card">
-                <div class="category-icon">🎭</div>
-                <h3 class="category-name">Drama & Teater</h3>
-                <p class="category-count">38 Buku</p>
-                <div style="display: flex; gap: 0.5rem; margin-top: 1rem; justify-content: center;">
-                    <button class="btn btn-sm btn-outline">Edit</button>
-                    <button class="btn btn-sm btn-danger">Hapus</button>
-                </div>
-            </div>
-
-            <div class="category-card">
-                <div class="category-icon">⚖️</div>
-                <h3 class="category-name">Hukum</h3>
-                <p class="category-count">71 Buku</p>
-                <div style="display: flex; gap: 0.5rem; margin-top: 1rem; justify-content: center;">
-                    <button class="btn btn-sm btn-outline">Edit</button>
-                    <button class="btn btn-sm btn-danger">Hapus</button>
-                </div>
-            </div>
         </section>
 
         <!-- DETAILED TABLE VIEW -->
@@ -285,90 +167,52 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>
-                                <div style="display: flex; align-items: center; gap: 1rem;">
-                                    <span style="font-size: 1.5rem;">💻</span>
-                                    <strong>Teknologi</strong>
-                                </div>
-                            </td>
-                            <td>284</td>
-                            <td>198</td>
-                            <td>86</td>
-                            <td><span class="badge badge-success">Sangat Tinggi</span></td>
-                            <td>
-                                <button class="btn btn-sm btn-outline"><i class="fas fa-edit"></i></button>
-                                <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div style="display: flex; align-items: center; gap: 1rem;">
-                                    <span style="font-size: 1.5rem;">📖</span>
-                                    <strong>Fiksi</strong>
-                                </div>
-                            </td>
-                            <td>412</td>
-                            <td>287</td>
-                            <td>125</td>
-                            <td><span class="badge badge-success">Sangat Tinggi</span></td>
-                            <td>
-                                <button class="btn btn-sm btn-outline"><i class="fas fa-edit"></i></button>
-                                <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div style="display: flex; align-items: center; gap: 1rem;">
-                                    <span style="font-size: 1.5rem;">🏛️</span>
-                                    <strong>Sejarah</strong>
-                                </div>
-                            </td>
-                            <td>156</td>
-                            <td>134</td>
-                            <td>22</td>
-                            <td><span class="badge badge-warning">Sedang</span></td>
-                            <td>
-                                <button class="btn btn-sm btn-outline"><i class="fas fa-edit"></i></button>
-                                <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div style="display: flex; align-items: center; gap: 1rem;">
-                                    <span style="font-size: 1.5rem;">🔬</span>
-                                    <strong>Sains</strong>
-                                </div>
-                            </td>
-                            <td>198</td>
-                            <td>156</td>
-                            <td>42</td>
-                            <td><span class="badge badge-success">Tinggi</span></td>
-                            <td>
-                                <button class="btn btn-sm btn-outline"><i class="fas fa-edit"></i></button>
-                                <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div style="display: flex; align-items: center; gap: 1rem;">
-                                    <span style="font-size: 1.5rem;">💼</span>
-                                    <strong>Bisnis</strong>
-                                </div>
-                            </td>
-                            <td>142</td>
-                            <td>109</td>
-                            <td>33</td>
-                            <td><span class="badge badge-success">Tinggi</span></td>
-                            <td>
-                                <button class="btn btn-sm btn-outline"><i class="fas fa-edit"></i></button>
-                                <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
-                            </td>
-                        </tr>
+                    <?php
+                    require_once '../../config/koneksi.php';
+
+$result = $conn->query("SELECT * FROM book_categories");
+
+$categories = $result->fetch_all(MYSQLI_ASSOC);
+
+foreach ($categories as $cat):
+?>
+    <tr>
+        <td><?= $cat['categories']; ?></td>
+        <td>0</td>  
+        <td>0</td>  
+        <td>0</td>  
+        <td>⭐</td> 
+        <td>
+            <button class="btn btn-sm btn-outline">Edit</button>
+            <button class="btn btn-sm btn-danger">Hapus</button>
+        </td>
+    </tr>
+        <?php endforeach; ?>
                     </tbody>
+
                 </table>
             </div>
         </section>
     </main>
+
+    <!-- POPUP FORM -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-container">
+            <div class="popup-header">
+                <h2>Tambah Kategori Baru</h2>
+            </div>
+            <form id="categoryForm" method="POST" action="tambah-kategori.php">
+                <div class="form-group">
+                    <label for="namaKategori">Nama Kategori</label>
+                    <input type="text" id="namaKategori" name="name" placeholder="Masukkan nama kategori" required>
+                </div>
+                <div class="popup-actions">
+                    <button type="button" class="btn btn-outline" onclick="closePopup()">Cancel</button>
+                    <button type="submit" name="store" class="btn btn-primary">Continue</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="../../script/dashboard.js"></script>
 </body>
 </html>

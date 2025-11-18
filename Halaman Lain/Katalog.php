@@ -63,14 +63,19 @@
                 <label class="label-filter">Kategori:</label>
                 <select class="pilih-filter" id="filter-kategori">
                     <option value="">Semua Kategori</option>
-                    <option value="programming">Programming</option>
-                    <option value="design">Design</option>
-                    <option value="business">Business</option>
-                    <option value="science">Science</option>
-                    <option value="fiction">Fiction</option>
-                    <option value="biography">Biography</option>
-                    <option value="history">History</option>
+
+                     <?php
+                      require '../config/koneksi.php';
+
+                    $query = "SELECT * FROM book_categories ORDER BY categories ASC";
+                    $result = $conn->query($query);
+
+                    foreach ($result as $row) {
+                    echo '<option value="' . $row['categories'] . '">' . $row['categories'] . '</option>';
+                        }
+                    ?>
                 </select>
+
             </div>
             
             <div class="grup-filter">
