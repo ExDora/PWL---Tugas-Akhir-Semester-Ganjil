@@ -15,7 +15,7 @@
                     📚
                 </div>
                 <div class="logo-text">
-                    <h2>LibraryMS</h2>
+                    <h2>Book - Ing</h2>
                     <p>Admin Panel</p>
                 </div>
             </div>

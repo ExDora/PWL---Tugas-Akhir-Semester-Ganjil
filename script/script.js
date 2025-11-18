@@ -10,7 +10,7 @@ const booksData = [
         pages: 464,
         status: "available",
         description: "Buku ini mengajarkan prinsip-prinsip menulis kode yang bersih, mudah dibaca, dan mudah dikelola. Essential untuk setiap programmer yang ingin meningkatkan kualitas kodenya.",
-        cover: "Gambar/bumi manusia.jpg",
+        cover: "../Gambar/bumi manusia.jpg",
         rating: 5,
         popularity: 95
     },
@@ -24,7 +24,7 @@ const booksData = [
         pages: 368,
         status: "borrowed",
         description: "Panduan klasik tentang desain yang berpusat pada pengguna. Menjelaskan bagaimana desain yang baik dapat membuat hidup lebih mudah.",
-        cover: "Gambar/laskar pelangi.jpg",
+        cover: "../Gambar/laskar pelangi.jpg",
         rating: 4,
         popularity: 87
     },
@@ -38,7 +38,7 @@ const booksData = [
         pages: 153,
         status: "available",
         description: "Mengeksplorasi bagian-bagian terbaik dari JavaScript dan mengajarkan cara menulis kode JavaScript yang efektif dan elegan.",
-        cover: "Gambar/filosofi teras.jpg",
+        cover: "../Gambar/filosofi teras.jpg",
         rating: 4,
         popularity: 82
     },
@@ -52,7 +52,7 @@ const booksData = [
         pages: 444,
         status: "available",
         description: "Eksplorasi mendalam tentang dua sistem pemikiran manusia dan bagaimana keduanya membentuk penilaian dan keputusan kita.",
-        cover: "Gambar/perahu kertas.jpg",
+        cover: "../Gambar/perahu kertas.jpg",
         rating: 5,
         popularity: 91
     },
@@ -66,7 +66,7 @@ const booksData = [
         pages: 336,
         status: "available",
         description: "Metodologi revolusioner untuk menciptakan dan mengelola startup yang sukses di era yang penuh ketidakpastian.",
-        cover: "Gambar/algoritma dan pemograman.jpg",
+        cover: "../Gambar/algoritma dan pemograman.jpg",
         rating: 4,
         popularity: 78
     },
@@ -80,7 +80,7 @@ const booksData = [
         pages: 328,
         status: "available",
         description: "Novel distopia klasik yang menggambarkan masyarakat totaliter di bawah pengawasan Big Brother. Sangat relevan dengan era digital saat ini.",
-        cover: "Gambar/atomic habits.jpg",
+        cover: "../Gambar/atomic habits.jpg",
         rating: 5,
         popularity: 94
     },
@@ -94,7 +94,7 @@ const booksData = [
         pages: 656,
         status: "borrowed",
         description: "Biografi lengkap tentang kehidupan dan karir Steve Jobs, pendiri Apple, berdasarkan wawancara eksklusif.",
-        cover: "Gambar/dilan 1990.jpg",
+        cover: "../Gambar/dilan 1990.jpg",
         rating: 5,
         popularity: 89
     },
@@ -108,7 +108,7 @@ const booksData = [
         pages: 256,
         status: "available",
         description: "Penjelasan yang dapat diakses tentang kosmologi modern, dari Big Bang hingga lubang hitam dan perjalanan waktu.",
-        cover: "Gambar/jepang.jpg",
+        cover: "../Gambar/jepang.jpg",
         rating: 5,
         popularity: 86
     },
