@@ -109,12 +109,12 @@
           info@perpustakaandigital.id
         </div>
         <div class="kartu-email">
-          Email<br>
-          info@perpustakaandigital.id
+          Telepon<br>
+          (021) 1234-5678
         </div>
         <div class="kartu-email">
-          Email<br>
-          info@perpustakaandigital.id
+          Alamat<br>
+          Jl. Pendidikan No.125
         </div>
       </div>
     </div>

@@ -1,10 +1,30 @@
+<?php
+require_once '../config/db_connect.php';
+
+$query = 'select * from books';
+
+$stmt = $conn->prepare($query);
+$stmt->execute();
+
+$results = $stmt->get_result();
+
+$books = [];
+
+while($book = $results->fetch_assoc()) {
+    $books[] = $book;
+}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Katalog Buku - LibraryHub</title>
-    <link rel="stylesheet" href="../style/Katalog.css">
+    <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
     <!-- Back Navigation -->
@@ -27,15 +47,15 @@
 
     <nav>
         <div class="nav-grup">
-            <a href="#" class="logo"><img src="Logo.jpg" alt="Logo"></a>
+            <a href="#" class="logo"><img src="../Gambar/Logo.jpg" alt="Logo"></a>
             <ul class="nav-links">
-                <li><a href="../index.php">Home</a></li>
-                <li><a href="../Halaman Lain/Katalog.php">Catalogue</a></li>
-                <li><a href="../Halaman Lain/aboutus.php">About</a></li>
+                <li><a href="../../index.php">Home</a></li>
+                <li><a href="#">Catalogue</a></li>
+                <li><a href="../aboutus.php">About</a></li>
             </ul>
 
             <div class="tombol-login">
-                <a href="Login.html" class="tombol tombol-garis">Login</a>
+                <a href="../sign-in/index.php" class="tombol tombol-garis">Login</a>
             </div>
             <!-- <button class="menu-toggle" onclick="toggleMenu()">☰</button> -->
         </div>
@@ -104,7 +124,7 @@
     <section class="results-section">
         <div class="results-header">
             <div class="results-info">
-                Menampilkan <span class="results-count" id="resultsCount">0</span> dari <span id="totalBooks">0</span> buku
+                 <span class="results-count" id="resultsCount">0</span> dari <span id="totalBooks">0</span> buku
             </div>
             
             <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">

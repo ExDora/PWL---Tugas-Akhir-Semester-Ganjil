@@ -2,11 +2,12 @@
     $host = "localhost";
     $username = "root";
     $password = "";
-    $database = "tugas_akhir";
+    $database = "library_db";
 
-    $connection = mysqli_connect($host, $username, $password, $database);
-
-    if(!$connection) {
-        die('Error Connection to database: ' . mysqli_connect_error());
+    try {
+        $connection = new PDO("mysql:host=$host;dbname=$database", $username, $password);
+        $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch(PDOException $e) {
+        die('Error Connection to database: ' . $e->getMessage());
     }
 ?>

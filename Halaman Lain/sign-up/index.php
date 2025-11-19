@@ -17,8 +17,10 @@
                 <h1>Sign up</h1>
                 
                 <form method="POST" action="../../actions/sign-up/store.php" id="signupForm" >
+                    <input type="text" id="name" name="name" placeholder="Full Name" required>
+
                     <input type="text" id="email" name="email" placeholder="Email or username" required>
-                    
+
                     <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
                     
                     <input type="password" id="password" name="password" placeholder="Password" required>
