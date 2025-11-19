@@ -35,7 +35,7 @@
             </ul>
 
             <div class="tombol-login">
-                <a href="Login.html" class="tombol tombol-garis">Login</a>
+                <a href="sign-in/index.php" class="tombol tombol-garis">Sign Up</a>
             </div>
             <!-- <button class="menu-toggle" onclick="toggleMenu()">☰</button> -->
         </div>

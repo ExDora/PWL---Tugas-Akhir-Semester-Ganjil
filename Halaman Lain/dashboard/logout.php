@@ -29,12 +29,6 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="analytics.html" class="nav-link">
-                        <span class="nav-icon">📊</span>
-                        <span>Analytics</span>
-                    </a>
-                </li>
             </ul>
 
             <div class="nav-section">Manajemen</div>
@@ -49,18 +43,6 @@
                     <a href="peminjam-buku.html" class="nav-link">
                         <span class="nav-icon">📖</span>
                         <span>Peminjam Buku</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="koleksi-buku.html" class="nav-link">
-                        <span class="nav-icon">📚</span>
-                        <span>Koleksi Buku</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="riwayat.html" class="nav-link">
-                        <span class="nav-icon">🕒</span>
-                        <span>Riwayat</span>
                     </a>
                 </li>
                 <li class="nav-item">

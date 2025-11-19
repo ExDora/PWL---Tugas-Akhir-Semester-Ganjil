@@ -13,11 +13,11 @@
             <ul class="nav-links">
                 <li><a href="../index.php">Home</a></li>
                 <li><a href="../Halaman Lain/Katalog.php">Catalogue</a></li>
-                <li><a href="Halaman Lain/aboutus.php">About</a></li>
+                <li><a href="#">About</a></li>
             </ul>
 
             <div class="tombol-login">
-                <a href="Halaman Lain/sign-up/index.php" class="tombol tombol-garis">Sign Up</a>
+                <a href="sign-up/index.php" class="tombol tombol-garis">Sign Up</a>
             </div>
             <!-- <button class="menu-toggle" onclick="toggleMenu()">☰</button> -->
         </div>
