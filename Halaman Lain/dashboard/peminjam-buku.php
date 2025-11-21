@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -15,7 +17,7 @@
                     📚
                 </div>
                 <div class="logo-text">
-                    <h2>LibraryMS</h2>
+                    <h2>Book - Ing</h2>
                     <p>Admin Panel</p>
                 </div>
             </div>
@@ -27,12 +29,6 @@
                     <a href="main.php" class="nav-link">
                         <span class="nav-icon">🏠</span>
                         <span>Dashboard</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="analytics.php" class="nav-link">
-                        <span class="nav-icon">📊</span>
-                        <span>Analytics</span>
                     </a>
                 </li>
             </ul>
@@ -49,18 +45,6 @@
                     <a href="peminjam-buku.php" class="nav-link active">
                         <span class="nav-icon">📖</span>
                         <span>Peminjam Buku</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="koleksi-buku.php" class="nav-link">
-                        <span class="nav-icon">📚</span>
-                        <span>Koleksi Buku</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="riwayat.php" class="nav-link">
-                        <span class="nav-icon">🕒</span>
-                        <span>Riwayat</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -239,17 +223,21 @@
                     Menampilkan <strong>1-10</strong> dari <strong>342</strong> peminjaman
                 </div>
                 <div class="pagination-buttons">
-                    <button class="pagination-btn" disabled>
-                        <i class="fas fa-chevron-left"></i> Previous
-                    </button>
-                    <button class="pagination-btn active">1</button>
-                    <button class="pagination-btn">2</button>
-                    <button class="pagination-btn">3</button>
-                    <button class="pagination-btn">4</button>
-                    <button class="pagination-btn">5</button>
-                    <button class="pagination-btn">
-                        Next <i class="fas fa-chevron-right"></i>
-                    </button>
+                    <?php if ($currentPage > 1): ?>
+                        <a href="?page=<?= $currentPage -1?>">
+                            <button class="pagination-btn">
+                            <i class="fas fa-chevron-left"></i> Previous
+                            </button>
+                        </a>
+                    <?php endif; ?>
+
+                    <?php if ($currentPage < $totalPages): ?>
+                        <a href="?page=<?= $currentPage + 1?>">
+                            <button class="pagination-btn">
+                            Next <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </a>
+                    <?php endif; ?>
                 </div>
             </div>
         </section>

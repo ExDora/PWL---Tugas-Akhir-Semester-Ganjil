@@ -33,7 +33,7 @@
                     📚
                 </div>
                 <div class="logo-text">
-                    <h2>LibraryMS</h2>
+                    <h2>Book - Ing</h2>
                     <p>Admin Panel</p>
                 </div>
             </div>
@@ -45,12 +45,6 @@
                     <a href="main.php" class="nav-link">
                         <span class="nav-icon">🏠</span>
                         <span>Dashboard</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="analytics.php" class="nav-link">
-                        <span class="nav-icon">📊</span>
-                        <span>Analytics</span>
                     </a>
                 </li>
             </ul>
@@ -67,18 +61,6 @@
                     <a href="peminjam-buku.php" class="nav-link">
                         <span class="nav-icon">📖</span>
                         <span>Peminjam Buku</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="koleksi-buku.php" class="nav-link">
-                        <span class="nav-icon">📚</span>
-                        <span>Koleksi Buku</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="riwayat.php" class="nav-link">
-                        <span class="nav-icon">🕒</span>
-                        <span>Riwayat</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -147,7 +129,9 @@
                 <div class="stat-header">
                     <div class="stat-info">
                         <h3>Total Users</h3>
-                        <div class="stat-value">856</div>
+                        <div class="stat-value">
+                            <?php echo $totalUsersss?>
+                        </div>
                     </div>
                     <div class="stat-icon primary">
                         👥
@@ -165,7 +149,9 @@
                 <div class="stat-header">
                     <div class="stat-info">
                         <h3>Active Users</h3>
-                        <div class="stat-value">723</div>
+                        <div class="stat-value">
+                            <?php echo $totalUsersss?>
+                        </div>
                     </div>
                     <div class="stat-icon success">
                         ✅
@@ -268,7 +254,7 @@
             </div>
             <div class="table-pagination">
                 <div class="pagination-info">
-                    Menampilkan <strong>1-10</strong> dari <strong>856</strong> users
+                    Menampilkan <strong>5</strong> dari <strong><?php echo $totalUsersss?></strong> users
                 </div>
                 <div class="pagination-buttons">
                     <?php if ($currentPage > 1): ?>

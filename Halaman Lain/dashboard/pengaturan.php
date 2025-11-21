@@ -15,7 +15,7 @@
                     📚
                 </div>
                 <div class="logo-text">
-                    <h2>LibraryMS</h2>
+                    <h2>Book - Ing</h2>
                     <p>Admin Panel</p>
                 </div>
             </div>
@@ -27,12 +27,6 @@
                     <a href="main.php" class="nav-link">
                         <span class="nav-icon">🏠</span>
                         <span>Dashboard</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="analytics.php" class="nav-link">
-                        <span class="nav-icon">📊</span>
-                        <span>Analytics</span>
                     </a>
                 </li>
             </ul>
@@ -49,18 +43,6 @@
                     <a href="peminjam-buku.php" class="nav-link">
                         <span class="nav-icon">📖</span>
                         <span>Peminjam Buku</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="koleksi-buku.php" class="nav-link">
-                        <span class="nav-icon">📚</span>
-                        <span>Koleksi Buku</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="riwayat.php" class="nav-link">
-                        <span class="nav-icon">🕒</span>
-                        <span>Riwayat</span>
                     </a>
                 </li>
                 <li class="nav-item">
