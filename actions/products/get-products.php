@@ -1,5 +1,5 @@
 <?php
-require_once '../../config/db-connection.php';
+require_once '../../config/db_connect.php';
 
 function getUsersss($payload)
 {
@@ -14,17 +14,13 @@ function getUsersss($payload)
     $keyword = isset($payload['keyword']) ? $payload['keyword'] : "";
     $search = "%$keyword%";
 
-    $query = "SELECT phone, email FROM users WHERE email LIKE ? LIMIT $limit OFFSET $offset";
+    $query = "SELECT phone, email FROM users WHERE email LIKE :search LIMIT $limit OFFSET $offset";
 
     $stmt = $connection->prepare($query);
-    $stmt->bind_param('s', $search);
+    $stmt->bindValue(':search', $search, PDO::PARAM_STR);
     $stmt->execute();
 
-    $result = $stmt->get_result();
-
-    while ($userss = $result->fetch_assoc()) {
-        $usersss[] = $userss;
-    }
+    $usersss = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     return $usersss;
 }

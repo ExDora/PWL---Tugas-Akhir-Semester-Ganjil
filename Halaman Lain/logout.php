@@ -7,75 +7,6 @@
     <link rel="stylesheet" href="../../style/dashboard.css">
 </head>
 <body>
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-        <div class="logo-container">
-            <div class="logo">
-                <div class="logo-icon">
-                    📚
-                </div>
-                <div class="logo-text">
-                    <h2>Book - Ing</h2>
-                    <p>Admin Panel</p>
-                </div>
-            </div>
-        </div>
-
-        <nav>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="dashboard.php" class="nav-link">
-                        <span class="nav-icon">🏠</span>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
-            </ul>
-
-            <div class="nav-section">Manajemen</div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="list-user.php" class="nav-link">
-                        <span class="nav-icon">👥</span>
-                        <span>List User</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="peminjam-buku.php" class="nav-link">
-                        <span class="nav-icon">📖</span>
-                        <span>Peminjam Buku</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="kategori-buku.php" class="nav-link">
-                        <span class="nav-icon">🏷️</span>
-                        <span>Kategori Buku</span>
-                    </a>
-                </li>
-            </ul>
-
-            <div class="nav-section">Lainnya</div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="pengaturan.php" class="nav-link">
-                        <span class="nav-icon">⚙️</span>
-                        <span>Pengaturan</span>
-                    </a>
-                </li>
-            </ul>
-
-            <div class="logout-section">
-                <ul class="nav-menu">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link logout active">
-                            <span class="nav-icon">🚪</span>
-                            <span>Logout</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </aside>
-
     <!-- MAIN CONTENT -->
     <main class="main-content">
         <div class="logout-container">
@@ -93,7 +24,7 @@
                 </div>
 
                 <div class="logout-actions">
-                    <button class="btn btn-outline" onclick="window.location.href='dashboard.html'">
+                    <button class="btn btn-outline" onclick="window.location.href='../index.php'">
                         <i class="fas fa-times"></i> Batal
                     </button>
                     <button class="btn btn-danger" onclick="performLogout()">
@@ -148,14 +79,14 @@
                 
                 alert('Logout berhasil! Anda akan diarahkan ke halaman login.');
                 // window.location.href = 'login.html'; // Uncomment when login page exists
-                window.location.href = '../sign-in/index.php'; // Temporary redirect
+                window.location.href = 'sign-in/index.php'; // Temporary redirect
             }, 1500);
         }
 
         // Add keyboard shortcut: ESC to cancel
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
-                window.location.href = 'dashboard.php';
+                window.location.href = '../index.php';
             }
         });
     </script>

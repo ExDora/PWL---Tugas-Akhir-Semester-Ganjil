@@ -1,24 +1,25 @@
 <?php
-require_once '../config/db_connect.php';
 session_start();
+
+require_once '../config/db_connect.php';
+
+// Pastikan session user_id ada
+if (!isset($_SESSION['user_id'])) {
+    header('Location: ../Halaman Lain/sign-in/index.php');
+    exit();
+}
 
 $userId = $_SESSION['user_id'];
 
-$query = 'select * from books';
+// Query
+$query = "SELECT * FROM books";
 
-$stmt = $conn->prepare($query);
+$stmt = $connection->prepare($query);
 $stmt->execute();
 
-$results = $stmt->get_result();
-
-$books = [];
-
-while ($book = $results->fetch_assoc()) {
-    $books[] = $book;
-}
-
-
+$books = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
+
 
 
 <!DOCTYPE html>
@@ -56,7 +57,7 @@ while ($book = $results->fetch_assoc()) {
             <ul class="nav-links">
                 <li><a href="../../index.php">Home</a></li>
                 <li><a href="#">Catalogue</a></li>
-                <li><a href="../aboutus.php">About</a></li>
+                <li><a href="aboutus.php">About</a></li>
             </ul>
 
             <div class="tombol-login">
@@ -82,20 +83,6 @@ while ($book = $results->fetch_assoc()) {
         <div class="filter">
             <div class="grup-filter">
                 <label class="label-filter">Kategori:</label>
-                <select class="pilih-filter" id="filter-kategori">
-                    <option value="">Semua Kategori</option>
-
-                     <?php
-                      require '../config/koneksi.php';
-
-                    $query = "SELECT * FROM book_categories ORDER BY categories ASC";
-                    $result = $conn->query($query);
-
-                    foreach ($result as $row) {
-                    echo '<option value="' . $row['categories'] . '">' . $row['categories'] . '</option>';
-                        }
-                    ?>
-                </select>
 
             </div>
 

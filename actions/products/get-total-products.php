@@ -1,11 +1,11 @@
 <?php
-    require_once '../../config/db-connection.php';
+require_once '../../config/db_connect.php';
 
-    $query = "SELECT COUNT(*) as total FROM users";
+$query = "SELECT COUNT(*) as total FROM users";
 
-    $stmt = $connection->prepare($query);
-    $stmt->execute();
+$stmt = $connection->prepare($query);
+$stmt->execute();
 
-    $result = $stmt->get_result()->fetch_assoc();
-    $totalUsersss = $result['total'];
+$result = $stmt->fetch(PDO::FETCH_ASSOC);
+$totalUsersss = $result['total'];
 ?>

@@ -1,5 +1,5 @@
 <?php
-    require_once '../../config/db-connection.php';
+    require_once '../../config/db_connect.php';
 
     if (isset($_POST["store"])) {
         $name = htmlspecialchars($_POST['name']);
@@ -27,7 +27,7 @@
         }
 
         if ($stmt->execute([$name, $email, $phone, $passwordHashed])) {
-            header('Location: ../../index.php');
+            header('Location: ../../Halaman Lain/sign-in/index.php');
             exit();
         } else {
             echo "Error to store user: " . $stmt->error;

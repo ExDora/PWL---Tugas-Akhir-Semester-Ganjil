@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once '../../config/db-connection.php';
+    require_once '../../config/db_connect.php';
     require_once '../../actions/products/get-products.php';
     require_once '../../actions/products/get-total-products.php';
     require_once '../../actions/sign-up/get-users.php';
