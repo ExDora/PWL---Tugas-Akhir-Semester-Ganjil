@@ -1,5 +1,7 @@
 <?php
-    $isLogin = true; // Cek apakah data user yang login ada di session?
+    session_start();
+
+    $isLogin = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true; // Cek apakah data user yang login ada di session?
 ?>
 
 <!DOCTYPE html>
