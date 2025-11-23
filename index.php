@@ -13,7 +13,7 @@
 <body>
     <nav>
         <div class="nav-grup">
-            <a href="#" class="logo"><img src="/Gambar/Logo.jpg" alt="Logo"></a>
+            <a href="#" class="logo"><img src="/Gambar/Logo.png" alt="Logo"></a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="Halaman Lain/Katalog.php">Catalogue</a></li>
