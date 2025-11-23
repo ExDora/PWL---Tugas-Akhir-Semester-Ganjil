@@ -24,7 +24,7 @@
         <nav>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="dashboard.html" class="nav-link">
+                    <a href="dashboard.php" class="nav-link">
                         <span class="nav-icon">🏠</span>
                         <span>Dashboard</span>
                     </a>
@@ -34,19 +34,19 @@
             <div class="nav-section">Manajemen</div>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="list-user.html" class="nav-link">
+                    <a href="list-user.php" class="nav-link">
                         <span class="nav-icon">👥</span>
                         <span>List User</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="peminjam-buku.html" class="nav-link">
+                    <a href="peminjam-buku.php" class="nav-link">
                         <span class="nav-icon">📖</span>
                         <span>Peminjam Buku</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="kategori-buku.html" class="nav-link">
+                    <a href="kategori-buku.php" class="nav-link">
                         <span class="nav-icon">🏷️</span>
                         <span>Kategori Buku</span>
                     </a>
@@ -56,7 +56,7 @@
             <div class="nav-section">Lainnya</div>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="pengaturan.html" class="nav-link">
+                    <a href="pengaturan.php" class="nav-link">
                         <span class="nav-icon">⚙️</span>
                         <span>Pengaturan</span>
                     </a>
@@ -66,7 +66,7 @@
             <div class="logout-section">
                 <ul class="nav-menu">
                     <li class="nav-item">
-                        <a href="logout.html" class="nav-link logout active">
+                        <a href="#" class="nav-link logout active">
                             <span class="nav-icon">🚪</span>
                             <span>Logout</span>
                         </a>

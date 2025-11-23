@@ -1,3 +1,7 @@
+<?php
+    $isLogin = true; // Cek apakah data user yang login ada di session?
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,9 +20,16 @@
                 <li><a href="../Halaman Lain/aboutus.php">About</a></li>
             </ul>
 
-            <div class="tombol-login">
-                <a href="Halaman Lain/sign-up/index.php" class="tombol tombol-garis">Sign Up</a>
-            </div>
+            <?php if($isLogin): ?>
+                <div>
+                    Sudah Login
+                </div>
+            <?php else:?>
+                <div class="tombol-login">
+                    <a href="Halaman Lain/sign-up/index.php" class="tombol tombol-garis">Sign Up</a>
+                </div>
+            <?php endif?>
+
             <!-- <button class="menu-toggle" onclick="toggleMenu()">☰</button> -->
         </div>
     </nav>

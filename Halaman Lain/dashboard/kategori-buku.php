@@ -150,7 +150,7 @@
                     </thead>
                     <tbody>
                     <?php
-                    require_once '../../config/koneksi.php';
+                    require_once '../../config/db_connect.php';
 
 $result = $conn->query("SELECT * FROM book_categories");
 
