@@ -150,14 +150,14 @@
                     </thead>
                     <tbody>
                     <?php
-                    require_once '../../config/db_connect.php';
+                        require_once '../../config/db_connect.php';
 
-$result = $conn->query("SELECT * FROM book_categories");
+                        $result = $conn->query("SELECT * FROM book_categories");
 
-$categories = $result->fetch_all(MYSQLI_ASSOC);
+                        $categories = $result->fetch_all(MYSQLI_ASSOC);
 
-foreach ($categories as $cat):
-?>
+                        foreach ($categories as $cat):
+                    ?>
     <tr>
         <td><?= $cat['categories']; ?></td>
         <td>0</td>  

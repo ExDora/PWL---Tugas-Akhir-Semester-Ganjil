@@ -31,12 +31,12 @@
                     
                     <input type="password" name="password" id="password" placeholder="Password" required>
                                         
-                    <div class="checkbox-container">
+                    <!-- <div class="checkbox-container">
                         <input type="checkbox" id="remember" name="remember">
                         <label for="remember">
                             Remember me <a href="#" class="link">Forgot Password?</a>
                         </label>
-                    </div>
+                    </div> -->
                     
                     <button type="submit" class="btn-continue">Continue</button>
                     
