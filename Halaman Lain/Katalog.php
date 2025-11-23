@@ -82,7 +82,25 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         <div class="filter">
             <div class="grup-filter">
+            <div class="grup-filter">
                 <label class="label-filter">Kategori:</label>
+                <select class="pilih-filter" id="filter-kategori">
+                    <option value="">Semua Kategori</option>
+
+                     <?php
+                      require '../config/db_connect.php';
+
+                    $query = "SELECT * FROM book_categories ORDER BY categories ASC";
+                    $result = $conn->query($query);
+
+                    foreach ($result as $row) {
+                    echo '<option value="' . $row['categories'] . '">' . $row['categories'] . '</option>';
+                        }
+                    ?>
+                </select>
+
+            </div>
+
 
             </div>
 

@@ -1,3 +1,0 @@
-- [x] Add check for $_SESSION['user_id'] in Katalog.php; redirect if not set
-- [x] Change $conn to $connection in Katalog.php
-- [x] Update database query to use PDO syntax (execute and fetchAll)
