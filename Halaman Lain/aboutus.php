@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -16,9 +18,15 @@
                 <li><a href="#">About</a></li>
             </ul>
 
-            <div class="tombol-login">
-                <a href="sign-up/index.php" class="tombol tombol-garis">Sign Up</a>
-            </div>
+            <?php if($isLogin): ?>
+                <div class="tombol-login">
+                    <a href="logout.php" class="tombol tombol-garis">Log Out</a>
+                </div>
+            <?php else:?> 
+                <div class="tombol-login">
+                    <a href="Halaman Lain/sign-up/index.php" class="tombol tombol-garis">Sign Up</a>
+                </div>
+            <?php endif?>
             <!-- <button class="menu-toggle" onclick="toggleMenu()">☰</button> -->
         </div>
     </nav>

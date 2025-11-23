@@ -1,23 +1,26 @@
 <?php
-session_start();
+    session_start();
 
-require_once '../config/db_connect.php';
+    require_once '../config/db_connect.php';
 
-// Pastikan session user_id ada
-if (!isset($_SESSION['user_id'])) {
-    header('Location: ../Halaman Lain/sign-in/index.php');
-    exit();
-}
+    // Pastikan session user_id ada
+    if (!isset($_SESSION['user_id'])) {
+        header('Location: ../Halaman Lain/sign-in/index.php');
+        exit();
 
-$userId = $_SESSION['user_id'];
+    }
 
-// Query
-$query = "SELECT * FROM books";
+    $userId = $_SESSION['user_id'];
 
-$stmt = $connection->prepare($query);
-$stmt->execute();
+    // Query
+    $query = "SELECT * FROM books";
 
-$books = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $stmt = $connection->prepare($query);
+    $stmt->execute();
+
+    $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    $isLogin = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
 ?>
 
 
@@ -60,9 +63,15 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <li><a href="aboutus.php">About</a></li>
             </ul>
 
-            <div class="tombol-login">
-                <a href="sign-in/index.php" class="tombol tombol-garis">Sign Up</a>
-            </div>
+            <?php if($isLogin): ?>
+                <div class="tombol-login">
+                    <a href="logout.php" class="tombol tombol-garis">Log Out</a>
+                </div>
+            <?php else:?> 
+                <div class="tombol-login">
+                    <a href="Halaman Lain/sign-up/index.php" class="tombol tombol-garis">Sign Up</a>
+                </div>
+            <?php endif?>
             <!-- <button class="menu-toggle" onclick="toggleMenu()">☰</button> -->
         </div>
     </nav>

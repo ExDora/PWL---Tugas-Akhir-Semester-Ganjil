@@ -1,0 +1,41 @@
+//Cek Admin atau bukan
+
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // Contoh login (ganti sesuai database kamu)
+    $adminEmail = "admin@library.com";
+
+    // Misal ini hasil SELECT dari database
+    // $user = SELECT * FROM users WHERE email = $email LIMIT 1;
+
+    // Jika email adalah email admin
+    if ($email === $adminEmail) {
+        // Cek password admin (bebas, contoh: admin123)
+        if ($password === "admin") {
+
+            // Set session admin
+            $_SESSION['logged_in'] = true;
+            $_SESSION['role'] = "admin";
+            $_SESSION['email'] = $email;
+
+            // Redirect ke dashboard admin
+            header("Location: ../../Halaman Lain/dashboard/main.php");
+            exit;
+        }
+    }
+
+    // Kalau bukan admin → user biasa
+    // (Pastikan cek password dari database ya)
+    if ($password === "123456") { // Contoh saja
+        $_SESSION['logged_in'] = true;
+        $_SESSION['role'] = "user";
+        $_SESSION['email'] = $email;
+
+        header("Location: /Halaman Lain/home.php");
+        exit;
+    }
+
+    // Kalau gagal login
+    header("Location: login.php?error=invalid");
+    exit;

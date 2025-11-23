@@ -32,13 +32,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Verifikasi password dengan password_verify karena di DB sudah di-hash
             if (password_verify($password, $user['password'])) {
-                // Login berhasil
 
-                // Set session
+                // Login berhasil
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['user_email'] = $user['email'];
-                $_SESSION['user_name'] = $user['name']; // sesuaikan dengan kolom nama di database
+                $_SESSION['user_name'] = $user['name']; 
                 $_SESSION['logged_in'] = true;
+
+                /*
+                ===========================================================
+                ==========   TAMBAHAN KHUSUS CEK ADMIN DISINI   ===========
+                ===========================================================
+                */
+
+                if ($user['email'] === "admin@library.com") {
+                    $_SESSION['role'] = "admin";
+                    header("Location: ../../Halaman Lain/dashboard/main.php");
+                    exit();
+                }
+
+                // Jika bukan admin → role user biasa
+                $_SESSION['role'] = "user";
+
+                /*
+                =======================  END TAMBAHAN  =====================
+                */
 
                 // Jika checkbox "Remember me" dicentang
                 if ($remember) {
@@ -54,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $update_stmt->execute();
                 }
 
-                // Redirect ke halaman dashboard/home
+                // Redirect ke halaman home user
                 header("Location: ../../index.php");
                 exit();
 
@@ -79,4 +97,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("Location: ../../Halaman Lain/sign-in/index.php");
     exit();
 }
+
 ?>
