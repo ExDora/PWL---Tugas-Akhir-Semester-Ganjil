@@ -2,7 +2,7 @@
 session_start();
 
 // 🔹 panggil koneksi database dari file db-connection.php
-require_once '../../config/koneksi.php'; // pastikan path-nya bener
+require_once '../../config/db_connect.php'; // pastikan path-nya bener
 
 if (isset($_POST['store'])) {
     $name = htmlspecialchars($_POST['name']);

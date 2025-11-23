@@ -1,4 +1,40 @@
+<?php
+require_once '../../config/db_connect.php';
 
+// == PAGINATION ==
+$perPage = 10;  
+$currentPage = isset($_GET['page']) ? (int)$_GET['page'] : 1; 
+$offset = ($currentPage - 1) * $perPage;
+
+// Hitung total data
+$countQuery = $connection->query("SELECT COUNT(*) FROM borrowers");
+$totalBorrow = $countQuery->fetchColumn();
+
+$totalPages = ceil($totalBorrow / $perPage);
+
+// == QUERY DATA ==
+$sql = "
+    SELECT
+        borrowers.id,
+        users.email AS email,
+        users.phone AS phone,
+        books.title AS judul_buku,
+        borrowers.tanggal_pinjam,
+        borrowers.batas_waktu,
+        borrowers.status
+    FROM borrowers
+    LEFT JOIN users ON borrowers.user_id = users.id
+    LEFT JOIN books ON borrowers.book_id = books.id
+    ORDER BY borrowers.id DESC
+    LIMIT :offset, :perPage
+";
+
+$stmt = $connection->prepare($sql);
+$stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+$stmt->bindValue(':perPage', $perPage, PDO::PARAM_INT);
+$stmt->execute();
+$borrowList = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
 
 <!DOCTYPE html>
 <html lang="id">
@@ -49,7 +85,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="kategori-buku.php" class="nav-link">
-                        <span class="nav-icon">🏷️</span>
+                        <span class="nav-icon">🏷</span>
                         <span>Kategori Buku</span>
                     </a>
                 </li>
@@ -59,7 +95,7 @@
             <ul class="nav-menu">
                 <li class="nav-item">
                     <a href="pengaturan.php" class="nav-link">
-                        <span class="nav-icon">⚙️</span>
+                        <span class="nav-icon">⚙</span>
                         <span>Pengaturan</span>
                     </a>
                 </li>
@@ -152,7 +188,7 @@
                         <div class="stat-value">23</div>
                     </div>
                     <div class="stat-icon danger">
-                        ⚠️
+                        ⚠
                     </div>
                 </div>
                 <div class="stat-footer">
@@ -213,14 +249,39 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Data akan diisi dari backend -->
-                        <!-- Contoh struktur kosong untuk backend integration -->
+                       <tbody>
+                            <?php 
+                            $no = $offset + 1;
+                            foreach ($borrowList as $row): ?>
+                                <tr>
+                                    <td><?= $no++; ?></td>
+                                    <td><?= $row['email'] ?? '-'; ?></td>
+                                    <td><?= $row['phone'] ?? '-'; ?></td>
+                                    <td><?= $row['judul_buku'] ?? 'Tidak ada buku'; ?></td>
+                                    <td><?= $row['tanggal_pinjam']; ?></td>
+                                    <td><?= $row['batas_waktu']; ?></td>
+                                    <td>
+                                        <?php if ($row['status'] == "Dipinjam"): ?>
+                                            <span style="color: orange;">Dipinjam</span>
+                                        <?php else: ?>
+                                            <span style="color: green;">Dikembalikan</span>
+                                        <?php endif; ?>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline">Detail</button>
+                                        <button class="btn btn-sm btn-danger">Hapus</button>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                            </tbody>
                     </tbody>
                 </table>
             </div>
             <div class="table-pagination">
                 <div class="pagination-info">
-                    Menampilkan <strong>1-10</strong> dari <strong>342</strong> peminjaman
+                    <p>Menampilkan <?= $offset + 1 ?> - 
+                     <?= min($offset + $perPage, $totalBorrow) ?> 
+                    dari <?= $totalBorrow ?> peminjaman</p>
                 </div>
                 <div class="pagination-buttons">
                     <?php if ($currentPage > 1): ?>
