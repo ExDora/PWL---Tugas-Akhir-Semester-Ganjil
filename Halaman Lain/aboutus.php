@@ -9,7 +9,7 @@
 <body>
     <nav>
         <div class="nav-grup">
-            <a href="#" class="logo"><img src="Logo.jpg" alt="Logo"></a>
+            <a href="#" class="logo"><img src="../Gambar/Logo.png" alt="Logo"></a>
             <ul class="nav-links">
                 <li><a href="../index.php">Home</a></li>
                 <li><a href="../Halaman Lain/Katalog.php">Catalogue</a></li>
@@ -109,12 +109,12 @@
           info@perpustakaandigital.id
         </div>
         <div class="kartu-email">
-          Email<br>
-          info@perpustakaandigital.id
+          Telepon<br>
+          (021) 1234-5678
         </div>
         <div class="kartu-email">
-          Email<br>
-          info@perpustakaandigital.id
+          Alamat<br>
+          Jl. Pendidikan No.125
         </div>
       </div>
     </div>

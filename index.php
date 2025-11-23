@@ -13,18 +13,18 @@
 <body>
     <nav>
         <div class="nav-grup">
-            <a href="#" class="logo"><img src="Logo.jpg" alt="Logo"></a>
+            <a href="#" class="logo"><img src="/Gambar/Logo.png" alt="Logo"></a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="../Halaman Lain/Katalog.php">Catalogue</a></li>
-                <li><a href="../Halaman Lain/aboutus.php">About</a></li>
+                <li><a href="Halaman Lain/Katalog.php">Catalogue</a></li>
+                <li><a href="Halaman Lain/aboutus.php">About</a></li>
             </ul>
 
             <?php if($isLogin): ?>
-                <div>
-                    Sudah Login
+                <div class="tombol-login">
+                    <a href="Halaman Lain/logout.php" class="tombol tombol-garis">Log Out</a>
                 </div>
-            <?php else:?>
+            <?php else:?> 
                 <div class="tombol-login">
                     <a href="Halaman Lain/sign-up/index.php" class="tombol tombol-garis">Sign Up</a>
                 </div>
@@ -82,8 +82,8 @@
 
                 <div class="fitur-box">
                     <div class="logo-fitur">📱</div>
-                    <h3>lorem ipsum</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi illo eveniet totam neque. Voluptatum, et vitae natus quis, distinctio culpa eum cupiditate animi voluptate non provident, eos harum officiis laboriosam.</p>
+                    <h3>Notifikasi Kalender</h3>
+                    <p>Tetap terorganisir dengan notifikasi kalender yang mengingatkan anda tentang peminjaman, pengembalian, dan pembaruan aktivitas perpustakaan.</p>
                 </div>
             </div>
         </div>
@@ -98,8 +98,8 @@
             <div class="footer-section">
                 <h3>Menu</h3>
                 <a href="#home">Beranda</a><br>
-                <a href="catalogue.html">Katalog</a><br>
-                <a href="about.html">Tentang</a><br>
+                <a href="Halaman Lain/Katalog.php">Katalog</a><br>
+                <a href="Halaman Lain/aboutus.html">Tentang</a><br>
                 <a href="#contact">Kontak</a>
             </div>
             <div class="footer-section">
@@ -111,7 +111,7 @@
             </div>
             <div class="footer-section">
                 <h3>Kontak</h3>
-                <p>Email: info@libraryhub.com</p>
+                <p>Email: info@booking.com</p>
                 <p>Telepon: (021) 1234-5678</p>
                 <p>Alamat: Jl. Pendidikan No. 123</p>
             </div>

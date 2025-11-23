@@ -46,7 +46,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="kategori-buku.php" class="nav-link active">
+                    <a href="#" class="nav-link active">
                         <span class="nav-icon">🏷️</span>
                         <span>Kategori Buku</span>
                     </a>
