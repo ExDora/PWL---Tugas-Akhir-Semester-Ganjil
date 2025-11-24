@@ -63,6 +63,15 @@ This is some of the entity that we have in our main feature:
 
 ---
 
+## Admin Access
+To access dashboard (admin page), you need to sign up
+1. Name: Admin
+2. Email: admin@library.com
+3. Password: admin
+4. Then log in with *admin@library.com* email and *admin* as password
+
+---
+
 ## 📖 Usage
 1. Student/Teacher
    - Register an account and log in
